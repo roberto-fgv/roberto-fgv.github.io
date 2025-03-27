@@ -9,26 +9,26 @@ const Contact = () => {
     subject: '',
     message: '',
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState(prev => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setFormStatus('success');
       console.log('Form submitted:', formState);
-      
+
       // Reset form after success
       setTimeout(() => {
         setFormState({
@@ -41,7 +41,7 @@ const Contact = () => {
       }, 3000);
     }, 1500);
   };
-  
+
   return (
     <section id="contact" className="py-16 md:py-24 bg-white">
       <div className="section-container">
@@ -49,7 +49,7 @@ const Contact = () => {
         <p className="section-subtitle">
           Entre em contato para colaborações, consultas ou outras informações.
         </p>
-        
+
         <div className="grid md:grid-cols-5 gap-8 mt-12">
           <div className="md:col-span-2 space-y-6">
             <div className="glass-card rounded-xl p-6">
@@ -63,10 +63,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium">Email</p>
-                    <a href="mailto:seuemail@exemplo.com" className="text-sm text-primary hover:underline">seuemail@exemplo.com</a>
+                    <a href="mailto:roberto.rocha@fgv.edu.br" className="text-sm text-primary hover:underline">roberto.rocha@fgv.edu.br</a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 mt-1">
                     <svg className="w-5 h-5 text-primary/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -75,10 +75,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium">Site</p>
-                    <a href="https://seusite.com" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">seusite.com</a>
+                    <a href="https://roberto-rocha.tech" target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">https://roberto-rocha.tech</a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center mr-3 mt-1">
                     <svg className="w-5 h-5 text-primary/80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -88,37 +88,45 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium">Localização</p>
-                    <p className="text-sm text-muted-foreground">Departamento, Universidade<br />Cidade, Estado, País</p>
+                    <p className="text-sm text-muted-foreground">FGV EAESP<br />Av. 9 de Julho, 2029, Bela Vista, São Paulo - SP | CEP 01313-902</p>
                   </div>
                 </div>
-                
+
                 <div className="pt-4">
                   <h4 className="text-sm font-medium mb-3">Redes Sociais</h4>
                   <div className="flex space-x-3">
                     {/* Academic social profiles */}
-                    <a href="#" className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center transition-colors hover:bg-primary/10" aria-label="Google Scholar">
+                    <a href="https://scholar.google.com/citations?user=7aSnMkQAAAAJ&hl=en" className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center transition-colors hover:bg-primary/10" aria-label="Google Scholar">
                       <svg className="w-5 h-5 text-primary/80" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5 12 0Z"/>
+                        <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14Zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5 12 0Z" />
                       </svg>
                     </a>
-                    <a href="#" className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center transition-colors hover:bg-primary/10" aria-label="ResearchGate">
+                    <a href="https://www.linkedin.com/in/rsrocha/" className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center transition-colors hover:bg-primary/10" aria-label="LinkedIn">
                       <svg className="w-5 h-5 text-primary/80" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .078.53h0a3.334 3.334 0 0 0 .112.436c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.142-.142h-3.146v.858h2.08v.142c0 .094 0 .297-.021.568a2.22 2.22 0 0 1-.092.605c-.052.147-.152.318-.32.488-.168.17-.376.254-.663.254a1.2 1.2 0 0 1-.651-.182 1.306 1.306 0 0 1-.466-.55 2.555 2.555 0 0 1-.21-.786 8.417 8.417 0 0 1-.064-.92c0-.932.074-1.653.224-2.167.149-.513.446-.769.89-.769.783 0 1.183.538 1.183 1.614v.263h.933v-.284c0-.772-.215-1.374-.639-1.799-.424-.425-1.01-.639-1.758-.639Zm-9.634.076h-6.07v12.069h.933v-4.867h5.137c.59 0 1.052-.224 1.654-.672.603-.448 1.012-1.04 1.229-1.799.097-.19.173-.395.25-.605.077-.21.133-.435.17-.672.058-.41.09-.776.101-1.358.011-.582-.01-.947-.052-1.358-.021-.248-.065-.489-.122-.733a3.775 3.775 0 0 0-.192-.67 2.935 2.935 0 0 0-.319-.633A2.28 2.28 0 0 0 11.95.384a3.278 3.278 0 0 0-.43-.203 2.383 2.383 0 0 0-.466-.105H9.952Zm15.752 0v12.069h.792V.076h-.792Zm-9.286.913h.85c.354 0 .657.095.859.284.201.19.36.479.484.87.076.26.132.531.162.814.03.282.047.693.047 1.232 0 .538-.024.98-.071 1.327-.047.346-.122.628-.224.848-.181.414-.45.621-.901.621H16.418V.989Zm-12.133 0h4.878c.327 0 .605.065.832.193.168.103.399.32.624.644.16.233.295.559.417.995.123.435.184.929.184 1.482 0 .576-.044 1.055-.122 1.437-.078.381-.193.712-.348.995-.118.21-.282.367-.533.527-.251.16-.553.25-.89.25h-5.042V.988Zm2.742 7.424v3.605h1.015c.315 0 .535-.271.651-.773.043-.2.075-.558.095-.858.02-.3.035-.717.035-1.219 0-.2-.008-.376-.024-.579a3.961 3.961 0 0 0-.071-.518 1.162 1.162 0 0 0-.142-.407c-.072-.116-.174-.188-.343-.188H7.027v-.039h-.142l-.142.039h-.142l.142-.039v.039h.284v-.077l-.142.038h.142v.039h-.142l-.142.038h.426v-.038h-.142v-.039h.142v.039h.142v-.039h-.142v-.038h-.142v.038h-.142v-.038h-.142v.077h.426v-.039H6.87Z"/>
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                       </svg>
                     </a>
-                    <a href="#" className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center transition-colors hover:bg-primary/10" aria-label="LinkedIn">
-                      <svg className="w-5 h-5 text-primary/80" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    <a href="https://github.com/roberto-fgv" className="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center transition-colors hover:bg-primary/10" aria-label="GitHub">
+                      <svg className="w-5 h-5 text-primary/80"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M12 0.297C5.373 0.297 0 5.67 0 12.297c0 5.285 3.438 9.78 8.207 11.385 0.6 0.113 0.82-0.26 0.82-0.577 0-0.285-0.01-1.04-0.015-2.04-3.34 0.726-4.042-1.61-4.042-1.61-0.546-1.385-1.332-1.754-1.332-1.754-1.09-0.746 0.083-0.73 0.083-0.73 1.205 0.085 1.84 1.238 1.84 1.238 1.07 1.834 2.805 1.305 3.49 0.997 0.107-0.775 0.42-1.305 0.76-1.605-2.665-0.305-5.467-1.332-5.467-5.93 0-1.31 0.468-2.382 1.235-3.22-0.135-0.303-0.54-1.523 0.115-3.173 0 0 1.005-0.322 3.3 1.23 0.955-0.266 1.98-0.4 3-0.405 1.02 0.005 2.045 0.14 3 0.405 2.295-1.552 3.3-1.23 3.3-1.23 0.655 1.65 0.25 2.87 0.115 3.173 0.77 0.838 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92 0.43 0.37 0.81 1.103 0.81 2.225 0 1.605-0.015 2.895-0.015 3.285 0 0.32 0.22 0.695 0.825 0.575C20.565 22.073 24 17.58 24 12.297c0-6.627-5.373-12-12-12z"
+                        />
                       </svg>
+
                     </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div className="md:col-span-3">
-            <form 
+            <form
               onSubmit={handleSubmit}
               className={cn(
                 "glass-card rounded-xl p-6",
@@ -136,7 +144,7 @@ const Contact = () => {
                   </div>
                 </div>
               )}
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Nome</label>

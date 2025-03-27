@@ -10,8 +10,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <div className="flex flex-col items-center md:items-start">
-              <h3 className="text-xl font-display font-bold">Seu Nome</h3>
-              <p className="text-sm text-muted-foreground mt-1">Pesquisador & Acadêmico</p>
+              <h3 className="text-xl font-display font-bold">Roberto Rocha</h3>
+              <p className="text-sm text-muted-foreground mt-1">PhD. Candidate | Sistemas de Informação</p>
             </div>
           </div>
           
@@ -53,7 +53,7 @@ const Footer = () => {
         
         <div className="mt-8 pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs text-muted-foreground">
-            &copy; {currentYear} Seu Nome. Todos os direitos reservados.
+            &copy; {currentYear} Roberto Rocha. Todos os direitos reservados.
           </p>
           
           <div className="mt-4 md:mt-0 flex space-x-4">

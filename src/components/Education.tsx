@@ -33,25 +33,31 @@ const Education = () => {
   // Example education data
   const educationData = [
     {
-      degree: "Doutorado em [Área]",
-      institution: "Universidade de [Nome]",
-      location: "Cidade, País",
-      date: "2018 - 2022",
-      description: "Tese sobre [tema específico]. Orientador: Prof. Dr. [Nome]."
+      degree: "Doutorado em Administração de Empresas",
+      institution: "Fundação Getulio Vargas",
+      location: "São Paulo, Brasil",
+      date: "2022 - 2026",
+      description: "Tese sobre [tema específico]. Orientador: Prof. Dr. Otávio P. Sanchez."
     },
     {
-      degree: "Mestrado em [Área]",
-      institution: "Universidade de [Nome]",
-      location: "Cidade, País",
-      date: "2016 - 2018",
-      description: "Dissertação sobre [tema específico]. Orientador: Prof. Dr. [Nome]."
+      degree: "Mestrado em Sistemas de Informação",
+      institution: "Universidade de São Paulo",
+      location: "São Paulo, Brasil",
+      date: "2010 - 2012",
+      description: "Dissertação sobre [tema específico]. Orientador: Prof. Dr. Marcelo Fantinato."
     },
     {
-      degree: "Graduação em [Área]",
-      institution: "Universidade de [Nome]",
-      location: "Cidade, País",
-      date: "2012 - 2016",
-      description: "Trabalho de conclusão sobre [tema específico]. Orientador: Prof. Dr. [Nome]."
+      degree: "Especialização em Administração de Sistemas de Informação",
+      institution: "Universidade Federal de Lavras",
+      location: "Lavras, Brasil",
+      date: "2017 - 2019",
+      description: "Trabalho de conclusão sobre [tema específico]. Orientador: Prof. Dr. André Luiz Zambalde."
+    },
+    {
+      degree: "Técnico em Informática",
+      institution: "Instituto Federal de Educação, Ciência e Tecnologia da Bahia",
+      location: "Vitória da Conquista, Brasil",
+      date: "2000 - 2001"
     },
   ];
 

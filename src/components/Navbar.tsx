@@ -42,7 +42,7 @@ const Navbar = () => {
               "transition-all duration-300",
               scrolled ? "text-gray-900" : "bg-gradient-to-r from-gray-900 to-primary bg-clip-text text-transparent"
             )}>
-              Currículo Acadêmico
+               {/* Currículo Acadêmico */}
             </span>
           </a>
         </div>

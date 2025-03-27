@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 type Publication = {
@@ -7,8 +6,8 @@ type Publication = {
   authors: string;
   journal: string;
   year: number;
-  doi: string;
-  abstract: string;
+  doi?: string;
+  abstract?: string;
   category: 'article' | 'book' | 'conference';
 };
 
@@ -16,48 +15,55 @@ const Publications = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [expandedPublication, setExpandedPublication] = useState<number | null>(null);
 
-  // Example publications data
   const publications: Publication[] = [
     {
       id: 1,
-      title: "Título da Publicação Científica 1",
-      authors: "Seu Nome, Coautor A, Coautor B",
-      journal: "Journal of Important Research, 12(3), 45-67",
-      year: 2022,
-      doi: "10.1234/abcd.5678",
-      abstract: "Resumo da publicação, destacando os principais pontos da pesquisa, metodologia utilizada e resultados alcançados.",
-      category: 'article'
-    },
-    {
-      id: 2,
-      title: "Proceedings da Conferência Internacional sobre Tema Relevante",
-      authors: "Seu Nome, Coautor C",
-      journal: "Proceedings of International Conference, pp. 123-135",
-      year: 2021,
-      doi: "10.5678/efgh.9012",
-      abstract: "Resumo da apresentação realizada na conferência, incluindo os principais pontos discutidos e conclusões.",
+      title: "Potential of Collaborative Mapping for Disaster Relief: A Case Study of OpenStreetMap in the Nepal Earthquake 2015",
+      authors: "TH Poiani, R dos Santos Rocha, LC Degrossi, JP de Albuquerque",
+      journal: "Proceedings of the 49th Hawaii International Conference on System Sciences",
+      year: 2016,
       category: 'conference'
     },
     {
+      id: 2,
+      title: "The use of software product lines for business process management: A systematic literature review",
+      authors: "R dos Santos Rocha, M Fantinato",
+      journal: "Information and Software Technology, 55(8), 1355-1373",
+      year: 2013,
+      category: 'article'
+    },
+    {
       id: 3,
-      title: "Capítulo do Livro sobre Tema Específico",
-      authors: "Seu Nome, Coautor D, Coautor E",
-      journal: "Título do Livro, Editora, pp. 78-95",
-      year: 2020,
-      doi: "10.9012/ijkl.3456",
-      abstract: "Resumo do capítulo de livro, apresentando o conteúdo abordado e suas contribuições para a área.",
-      category: 'book'
+      title: "A taxonomy of quality assessment methods for volunteered and crowdsourced geographic information",
+      authors: "LC Degrossi, J Porto de Albuquerque, R Santos Rocha, A Zipf",
+      journal: "Transactions in GIS, 22(2), 542-560",
+      year: 2018,
+      category: 'article'
     },
     {
       id: 4,
-      title: "Título da Publicação Científica 2",
-      authors: "Seu Nome, Coautor F",
-      journal: "Another Important Journal, 8(2), 112-128",
-      year: 2019,
-      doi: "10.3456/mnop.7890",
-      abstract: "Resumo detalhado da publicação, explicando a metodologia, resultados e implicações para a área de estudo.",
+      title: "A survey on reuse in the business process management domain",
+      authors: "M Fantinato, MBF Toledo, LH Thom, IMS Gimenes, RS Rocha",
+      journal: "International Journal of Business Process Integration and Management, 6(1)",
+      year: 2012,
       category: 'article'
     },
+    {
+      id: 5,
+      title: "Dynamic product line for Business Process Management",
+      authors: "RS Rocha, M Fantinato, LH Thom, MM Eler",
+      journal: "Business Process Management Journal, 21(6), 1224-1256",
+      year: 2015,
+      category: 'article'
+    },
+    {
+      id: 6,
+      title: "Improving the Involvement of Digital Volunteers in Disaster Management",
+      authors: "R dos Santos Rocha, A Widera, RP van den Berg, JP de Albuquerque",
+      journal: "First IFIP Conference on Information Technology in Disaster Risk Reduction",
+      year: 2016,
+      category: 'book'
+    }
   ];
 
   const filteredPublications = activeFilter === 'all' 
@@ -129,21 +135,27 @@ const Publications = () => {
                 
                 {expandedPublication === publication.id && (
                   <div className="mt-4 pt-4 border-t border-primary/10 animate-fade-in">
-                    <h4 className="text-sm font-semibold mb-2">Resumo</h4>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {publication.abstract}
-                    </p>
-                    <div className="flex items-center">
-                      <span className="text-xs font-medium">DOI:</span>
-                      <a 
-                        href={`https://doi.org/${publication.doi}`} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-xs ml-2 text-blue-600 hover:underline"
-                      >
-                        {publication.doi}
-                      </a>
-                    </div>
+                    {publication.abstract && (
+                      <>
+                        <h4 className="text-sm font-semibold mb-2">Resumo</h4>
+                        <p className="text-sm text-muted-foreground mb-4">
+                          {publication.abstract}
+                        </p>
+                      </>
+                    )}
+                    {publication.doi && (
+                      <div className="flex items-center">
+                        <span className="text-xs font-medium">DOI:</span>
+                        <a 
+                          href={`https://doi.org/${publication.doi}`} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-xs ml-2 text-blue-600 hover:underline"
+                        >
+                          {publication.doi}
+                        </a>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
