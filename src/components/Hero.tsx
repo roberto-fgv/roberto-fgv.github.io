@@ -59,7 +59,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
-              <span className="block">Seu Nome</span>
+              <span className="block">Roberto Rocha</span>
               <span className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mt-2 block">
                 Pesquisador & Acadêmico
               </span>
