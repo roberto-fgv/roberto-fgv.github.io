@@ -76,7 +76,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold mb-4">Conquistas</h3>
               <p className="text-muted-foreground">
-                Entre minhas principais conquistas acadêmicas, destaco [conquista 1], [conquista 2] e [prêmio/reconhecimento]. Estas realizações refletem meu compromisso com a excelência acadêmica e contribuição para a comunidade científica.
+                Entre minhas principais conquistas acadêmicas, destaco a aprovação em primeiro lugar no processo seletivo do Edital 01/2020 para bolsas de pesquisa no Centro de Tecnologia da Informação Renato Archer e a aprovação em 1º lugar na seleção pública para o curso de Mestrado em Sistemas de Informação da Universidade de São Paulo (USP). Além disso, fui agraciado com a prestigiosa Marie Skłodowska-Curie Actions Research Fellowship da Comissão Europeia em 2016. Meus trabalhos também obtiveram reconhecimento, como a inclusão na ScienceDirect Top 25 List of Most Downloaded Articles e o prêmio de Top 20 Most Downloaded Recent Papers da Transactions in GIS.
               </p>
             </div>
           </div>
