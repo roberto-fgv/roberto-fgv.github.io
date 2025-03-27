@@ -12,12 +12,6 @@ import Footer from '@/components/Footer';
 const Index = () => {
   // Initialize animations and scroll behavior
   useEffect(() => {
-    // Animate hero section on page load
-    const heroSection = document.querySelector('#hero');
-    if (heroSection) {
-      heroSection.classList.add('opacity-100');
-    }
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -35,6 +29,33 @@ const Index = () => {
         });
       });
     });
+
+    // Animate sections on scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+
+    return () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.removeEventListener('click', () => {});
+      });
+      
+      document.querySelectorAll('section').forEach(section => {
+        observer.unobserve(section);
+      });
+    };
   }, []);
 
   return (

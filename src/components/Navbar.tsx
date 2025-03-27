@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
+import { GraduationCap } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -34,9 +35,15 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-        <div className="font-display font-bold text-xl">
-          <a href="#" className="transition-colors hover:text-primary/80">
-            Currículo Acadêmico
+        <div className="font-display font-bold text-xl flex items-center">
+          <a href="#" className="transition-colors hover:text-primary flex items-center gap-2">
+            <GraduationCap className="h-6 w-6" />
+            <span className={cn(
+              "transition-all duration-300",
+              scrolled ? "text-gray-900" : "bg-gradient-to-r from-gray-900 to-primary bg-clip-text text-transparent"
+            )}>
+              Currículo Acadêmico
+            </span>
           </a>
         </div>
         
@@ -52,7 +59,12 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-primary/80 transition-colors"
+              className={cn(
+                "text-sm font-medium transition-colors relative py-2",
+                "after:absolute after:w-full after:h-0.5 after:bg-primary after:bottom-0 after:left-0",
+                "after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300",
+                scrolled ? "text-gray-800 hover:text-primary" : "text-gray-800 hover:text-primary"
+              )}
             >
               {item.name}
             </a>
@@ -98,7 +110,7 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="block py-3 text-center font-medium hover:text-primary/80 transition-colors"
+              className="block py-3 text-center font-medium hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
