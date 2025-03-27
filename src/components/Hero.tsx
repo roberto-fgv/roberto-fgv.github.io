@@ -66,7 +66,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground">
-              Pesquisador experiente e acadêmico com formação em Administração e Sistemas de Informação, atualmente doutorando em Administração de Empresas pela FGV EAESP. Possuo mais de 15 anos de experiência em pesquisa, gestão de projetos e ensino superior, com sólida trajetória em avaliação de impacto, disseminação de pesquisa e colaboração com instituições nacionais e internacionais.
+            Sou pesquisador e acadêmico com formação em Administração e Sistemas de Informação, atualmente doutorando em Administração de Empresas pela FGV EAESP. Com mais de 15 anos de experiência, atuo em pesquisa, gestão de projetos e ensino superior, tendo uma sólida trajetória em avaliação de impacto, disseminação do conhecimento e colaboração com instituições nacionais e internacionais. Minha atuação se destaca pela integração entre teoria e prática, contribuindo para o avanço da pesquisa e a geração de impacto real no campo acadêmico e empresarial.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">

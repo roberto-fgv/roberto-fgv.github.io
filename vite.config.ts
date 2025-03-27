@@ -20,5 +20,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/academic-landing-page-builder/", // Substitua pelo nome do repositório no GitHub
+  base: "/", // Substitua pelo nome do repositório no GitHub
 }));
