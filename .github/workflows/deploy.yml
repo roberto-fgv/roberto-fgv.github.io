@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Substitua "main" pelo nome do seu branch principal, se necessário
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Certifique-se de usar a versão correta do Node.js
+          cache: 'npm'
+
+      # Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # Fazer o build do projeto
+      - name: Build project
+        run: npm run build
+
+      # Deploy para o GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
