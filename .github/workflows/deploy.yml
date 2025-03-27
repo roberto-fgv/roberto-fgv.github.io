@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Substitua "main" pelo nome do seu branch principal, se necessário
+      - main # Substitua "main" pelo nome do seu branch principal
 
 jobs:
   build-and-deploy:
@@ -28,6 +28,10 @@ jobs:
       # Fazer o build do projeto
       - name: Build project
         run: npm run build
+
+      # Copiar o arquivo CNAME para a pasta dist
+      - name: Add CNAME file
+        run: echo "roberto-rocha.tech" > dist/CNAME
 
       # Deploy para o GitHub Pages
       - name: Deploy to GitHub Pages
