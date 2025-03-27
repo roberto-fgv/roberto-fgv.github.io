@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +20,16 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <header 
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled 
-          ? "py-3 bg-white/80 backdrop-blur-lg shadow-sm" 
+          ? "py-3 bg-white/90 backdrop-blur-lg shadow-sm" 
           : "py-5 bg-transparent"
       )}
     >
@@ -55,12 +60,50 @@ const Navbar = () => {
         </nav>
 
         <div className="md:hidden">
-          {/* Mobile menu button - simplified for first version */}
-          <button className="p-2 focus:outline-none">
-            <span className="block w-6 h-0.5 bg-current mb-1.5"></span>
-            <span className="block w-6 h-0.5 bg-current mb-1.5"></span>
-            <span className="block w-6 h-0.5 bg-current"></span>
+          <button 
+            className="p-2 focus:outline-none" 
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            <span className={cn(
+              "block w-6 h-0.5 bg-current mb-1.5 transition-transform duration-300",
+              mobileMenuOpen && "transform rotate-45 translate-y-2"
+            )}></span>
+            <span className={cn(
+              "block w-6 h-0.5 bg-current mb-1.5 transition-opacity duration-300",
+              mobileMenuOpen && "opacity-0"
+            )}></span>
+            <span className={cn(
+              "block w-6 h-0.5 bg-current transition-transform duration-300",
+              mobileMenuOpen && "transform -rotate-45 -translate-y-2"
+            )}></span>
           </button>
+        </div>
+      </div>
+      
+      {/* Mobile menu */}
+      <div className={cn(
+        "md:hidden absolute w-full bg-white shadow-md transition-all duration-300 overflow-hidden",
+        mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+      )}>
+        <div className="px-4 py-2">
+          {[
+            { name: 'Início', href: '#hero' },
+            { name: 'Sobre', href: '#about' },
+            { name: 'Formação', href: '#education' },
+            { name: 'Publicações', href: '#publications' },
+            { name: 'Habilidades', href: '#skills' },
+            { name: 'Contato', href: '#contact' },
+          ].map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="block py-3 text-center font-medium hover:text-primary/80 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       </div>
     </header>

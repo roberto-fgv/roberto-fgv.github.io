@@ -1,110 +1,101 @@
 
 import React, { useEffect, useRef } from 'react';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 
-type Skill = {
-  category: string;
-  items: { name: string; level: number }[];
-};
+const skillsData = [
+  { name: 'Pesquisa Acadêmica', value: 90 },
+  { name: 'Publicações', value: 75 },
+  { name: 'Ensino', value: 85 },
+  { name: 'Análise de Dados', value: 80 },
+  { name: 'Metodologia Científica', value: 95 },
+];
 
 const Skills = () => {
-  const skillsRef = useRef<HTMLDivElement>(null);
-  
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const bars = entry.target.querySelectorAll('.skill-bar');
-            bars.forEach((bar, index) => {
+            entry.target.classList.add('opacity-100');
+            const elements = entry.target.querySelectorAll('.animate-item');
+            elements.forEach((el, index) => {
               setTimeout(() => {
-                (bar as HTMLElement).style.width = (bar as HTMLElement).dataset.width || '0%';
+                el.classList.add('animate-fade-up');
               }, 100 * index);
             });
-            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
-    
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
-    
+
     return () => {
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
       }
     };
   }, []);
 
-  // Example skills data
-  const skillsData: Skill[] = [
-    {
-      category: "Habilidades de Pesquisa",
-      items: [
-        { name: "Metodologia Científica", level: 90 },
-        { name: "Análise de Dados", level: 85 },
-        { name: "Revisão de Literatura", level: 95 },
-        { name: "Escrita Acadêmica", level: 88 },
-      ]
-    },
-    {
-      category: "Ferramentas e Tecnologias",
-      items: [
-        { name: "SPSS/R/Python", level: 75 },
-        { name: "LaTeX", level: 80 },
-        { name: "Gestão de Referências", level: 92 },
-        { name: "Plataformas de Pesquisa", level: 85 },
-      ]
-    },
-    {
-      category: "Competências Complementares",
-      items: [
-        { name: "Apresentações Acadêmicas", level: 88 },
-        { name: "Idiomas", level: 82 },
-        { name: "Trabalho em Equipe", level: 90 },
-        { name: "Gestão de Projetos", level: 78 },
-      ]
-    }
-  ];
-
   return (
-    <section id="skills" className="py-16 md:py-24 bg-gradient-to-b from-blue-50/50 to-white">
+    <section
+      id="skills"
+      ref={sectionRef}
+      className="py-20 bg-gray-50 relative overflow-hidden opacity-0 transition-opacity duration-700"
+    >
       <div className="section-container">
-        <h2 className="section-title">Habilidades</h2>
-        <p className="section-subtitle">
-          Competências técnicas e acadêmicas desenvolvidas ao longo da minha trajetória.
+        <h2 className="section-title text-center animate-item">Competências Acadêmicas</h2>
+        <p className="section-subtitle text-center animate-item">
+          Áreas de conhecimento e expertise desenvolvidas ao longo da carreira acadêmica
         </p>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12" ref={skillsRef}>
-          {skillsData.map((skillGroup, groupIndex) => (
-            <div 
-              key={groupIndex} 
-              className="glass-card rounded-xl p-6 opacity-0 animate-fade-in"
-              style={{ animationDelay: `${groupIndex * 150}ms` }}
-            >
-              <h3 className="text-lg font-bold mb-6">{skillGroup.category}</h3>
-              
-              <div className="space-y-5">
-                {skillGroup.items.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                      <div 
-                        className="skill-bar h-full bg-primary rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: '0%' }}
-                        data-width={`${skill.level}%`}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+          <div className="glass-card rounded-xl p-6 animate-item">
+            <h3 className="text-xl font-semibold mb-4">Análise de Desempenho</h3>
+            <p className="text-muted-foreground mb-6">
+              Crescimento contínuo nas métricas acadêmicas e índices de impacto das publicações
+            </p>
+            <div className="aspect-w-16 aspect-h-9 overflow-hidden rounded-lg">
+              <img 
+                src="/lovable-uploads/bb9bc312-43a1-4129-aea3-35dfa5c7e68f.png" 
+                alt="Gráfico de desempenho acadêmico" 
+                className="object-cover w-full h-full"
+              />
             </div>
-          ))}
+          </div>
+          
+          <div className="glass-card rounded-xl p-6 animate-item">
+            <h3 className="text-xl font-semibold mb-4">Habilidades & Competências</h3>
+            <ChartContainer className="h-64 w-full" config={{
+              research: { color: "#0EA5E9" },
+              publications: { color: "#33C3F0" },
+              teaching: { color: "#1EAEDB" },
+              data: { color: "#D3E4FD" },
+              methodology: { color: "#2563EB" },
+            }}>
+              <BarChart
+                data={skillsData}
+                layout="vertical"
+                margin={{ top: 10, right: 30, left: 100, bottom: 10 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
+                <XAxis type="number" domain={[0, 100]} tickCount={6} />
+                <YAxis type="category" dataKey="name" width={90} />
+                <Bar dataKey="value" fill="var(--color-research)" radius={[0, 4, 4, 0]} />
+                <ChartTooltip
+                  content={
+                    <ChartTooltipContent formatter={(value) => [`${value}%`, 'Nível']} />
+                  }
+                />
+              </BarChart>
+            </ChartContainer>
+          </div>
         </div>
       </div>
     </section>

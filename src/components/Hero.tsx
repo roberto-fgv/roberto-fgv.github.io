@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -41,37 +42,49 @@ const Hero = () => {
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-100/30 rounded-full filter blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '1s' }}></div>
       
       <div className="container max-w-6xl mx-auto px-4 text-center opacity-0 transition-opacity duration-1000">
-        <div className="space-y-6 max-w-3xl mx-auto">
-          <div className="inline-block">
-            <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/5 text-primary/90 border border-primary/10">
-              Currículo Acadêmico
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6 text-left md:text-left">
+            <div className="inline-block">
+              <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/5 text-primary/90 border border-primary/10">
+                Currículo Acadêmico
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-tight">
+              <span className="block">Seu Nome</span>
+              <span className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mt-2 block">
+                Pesquisador & Acadêmico
+              </span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground">
+              Especialista em sua área acadêmica com experiência em pesquisa, ensino e publicações científicas relevantes.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <a 
+                href="#contact" 
+                className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium shadow-sm hover:bg-primary/90 transition-colors"
+              >
+                Contato
+              </a>
+              <a 
+                href="#about" 
+                className="px-8 py-3 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-secondary/80 transition-colors"
+              >
+                Saiba Mais
+              </a>
+            </div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight">
-            <span className="block">Seu Nome</span>
-            <span className="text-3xl md:text-4xl lg:text-5xl text-muted-foreground mt-2 block">
-              Pesquisador & Acadêmico
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Especialista em sua área acadêmica com experiência em pesquisa, ensino e publicações científicas relevantes.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <a 
-              href="#contact" 
-              className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium shadow-sm hover:bg-primary/90 transition-colors"
-            >
-              Contato
-            </a>
-            <a 
-              href="#about" 
-              className="px-8 py-3 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-secondary/80 transition-colors"
-            >
-              Saiba Mais
-            </a>
+          <div className="hidden md:block overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+            <AspectRatio ratio={16/10} className="bg-muted">
+              <img 
+                src="/lovable-uploads/bb9bc312-43a1-4129-aea3-35dfa5c7e68f.png" 
+                alt="Gráfico de desempenho acadêmico" 
+                className="object-cover w-full h-full"
+              />
+            </AspectRatio>
           </div>
         </div>
         
