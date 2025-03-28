@@ -1,8 +1,7 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { ArrowDown, Award, BookOpen, GraduationCap } from 'lucide-react';
+import { ArrowDown, Award, BookOpen, GraduationCap } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -10,13 +9,13 @@ const Hero = () => {
   useEffect(() => {
     // Animação no carregamento da página
     if (heroRef.current) {
-      heroRef.current.classList.add('opacity-100');
+      heroRef.current.classList.add("opacity-100");
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100');
+          entry.target.classList.add("opacity-100");
           observer.unobserve(entry.target);
         }
       },
@@ -45,12 +44,21 @@ const Hero = () => {
 
       {/* Animated shapes */}
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200/40 rounded-full filter blur-3xl opacity-70 animate-pulse"></div>
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-200/40 rounded-full filter blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-purple-100/30 rounded-full filter blur-2xl opacity-50 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div
+        className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-200/40 rounded-full filter blur-3xl opacity-70 animate-pulse"
+        style={{ animationDelay: "1s" }}
+      ></div>
+      <div
+        className="absolute top-1/4 left-1/4 w-48 h-48 bg-purple-100/30 rounded-full filter blur-2xl opacity-50 animate-pulse"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
       <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 transition-opacity duration-1000 opacity-100">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 text-left md:text-left order-2 md:order-1 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <div
+            className="space-y-8 text-left md:text-left order-2 md:order-1 animate-fade-in"
+            style={{ animationDelay: "0.5s" }}
+          >
             <div>
               <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary/90 border border-primary/10 inline-flex items-center">
                 <Award className="w-4 h-4 mr-1" />
@@ -66,7 +74,12 @@ const Hero = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground">
-            Sou pesquisador com formação em Administração e Sistemas de Informação, atualmente doutorando em Administração de Empresas pela FGV EAESP. Com mais de 15 anos de experiência, atuo em pesquisa, gestão de projetos e ensino superior, tendo uma sólida trajetória em avaliação de impacto, disseminação do conhecimento e colaboração com instituições nacionais e internacionais.
+              Sou pesquisador com formação em Administração e Sistemas de
+              Informação, atualmente doutorando em Administração de Empresas
+              pela FGV EAESP. Com mais de 15 anos de experiência, atuo em
+              pesquisa, gestão de projetos e ensino superior, tendo uma sólida
+              trajetória em avaliação de impacto, disseminação do conhecimento e
+              colaboração com instituições nacionais e internacionais.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -86,8 +99,16 @@ const Hero = () => {
 
             <div className="flex gap-6 pt-2">
               {[
-                { icon: <GraduationCap className="w-8 h-8 mb-2" />, label: "Educação", value: "Ph.D." },
-                { icon: <BookOpen className="w-8 h-8 mb-2" />, label: "Publicações", value: "21+" },
+                {
+                  icon: <GraduationCap className="w-8 h-8 mb-2" />,
+                  label: "Educação",
+                  value: "Ph.D.",
+                },
+                {
+                  icon: <BookOpen className="w-8 h-8 mb-2" />,
+                  label: "Publicações",
+                  value: "21+",
+                },
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -96,13 +117,18 @@ const Hero = () => {
                 >
                   <div className="text-primary/80">{stat.icon}</div>
                   <div className="text-2xl font-bold">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="order-1 md:order-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div
+            className="order-1 md:order-2 animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
+          >
             <div className="relative overflow-hidden rounded-xl shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10 rounded-xl"></div>
               <AspectRatio ratio={16 / 9} className="bg-muted">
@@ -117,7 +143,10 @@ const Hero = () => {
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-          <a href="#about" className="flex flex-col items-center text-sm text-muted-foreground hover:text-primary transition-colors">
+          <a
+            href="#about"
+            className="flex flex-col items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
             <span className="mb-2">Role para baixo</span>
             <ArrowDown className="w-6 h-6" />
           </a>
