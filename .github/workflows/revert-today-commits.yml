@@ -1,0 +1,18 @@
+name: Revert Today's Commits
+
+on: [workflow_dispatch]
+
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Revert today's commits
+        run: |
+          git log --since="2025-03-30T00:00:00" --until="2025-03-30T23:59:59" --pretty=format:"%H" > commits.txt
+          while read commit; do
+            git revert $commit --no-edit || git revert --abort
+          done < commits.txt
+          git push origin main
