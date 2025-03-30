@@ -37,16 +37,16 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center pt-16 relative overflow-hidden bg-gradient-to-b from-blue-500 to-blue-100"
+      className="min-h-screen flex flex-col items-center justify-center pt-16 relative overflow-hidden bg-gradient-to-b from-blue-100 to-white"
       ref={heroRef}
     >
       {/* Background decorations */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNGRkZGRkYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTQtMi4yMSAwLTQgMS43OS00IDRzMS43OSA0IDQgNGMyLjIxIDAgNC0xLjc5IDQtNHptLTQgMTBjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDQgNC0xLjc5IDQtNC0xLjc5LTQtNC00em0wLTIwYzIuMjEgMCA0LTEuNzktNC00cy0xLjc5LTQtNC00LTQgMS43OS00IDQgMS43OSA0IDQgNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNCQkRFRkIiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTQtMi4yMSAwLTQgMS43OS00IDRzMS43OSA0IDQgNGMyLjIxIDAgNC0xLjc5IDQtNHptLTQgMTBjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDQgNC0xLjc5IDQtNC0xLjc5LTQtNC00em0wLTIwYzIuMjEgMCA0LTEuNzktNC00cy0xLjc5LTQtNC00LTQgMS43OS00IDQgMS43OSA0IDQgNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20 pointer-events-none"></div>
 
       {/* Animated shapes */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/20 rounded-full filter blur-3xl opacity-70 animate-pulse"></div>
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-200/40 rounded-full filter blur-3xl opacity-70 animate-pulse"></div>
       <div
-        className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/20 rounded-full filter blur-3xl opacity-70 animate-pulse"
+        className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-200/40 rounded-full filter blur-3xl opacity-70 animate-pulse"
         style={{ animationDelay: "1s" }}
       ></div>
       <div
@@ -54,26 +54,26 @@ const Hero = () => {
         style={{ animationDelay: "2s" }}
       ></div>
 
-      <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 transition-opacity duration-1000 opacity-100 z-10">
+      <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 transition-opacity duration-1000 opacity-0">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <div>
-              <span className="px-3 py-1 rounded-full text-sm font-medium bg-white/30 text-white border border-white/30 inline-flex items-center">
+              <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary/90 border border-primary/10 inline-flex items-center">
                 <Award className="w-4 h-4 mr-1" />
                 <span>MSc. Information Systems</span>
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight text-white">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
               <span className="block">Roberto Rocha</span>
-              <span className="text-2xl md:text-3xl lg:text-4xl text-white/80 mt-2 block">
+              <span className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mt-2 block">
                 Ph.D. Candidate
               </span>
             </h1>
 
-            <div className="w-20 h-1 bg-white/80 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
 
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Sou pesquisador com formação em Administração e Sistemas de
               Informação, atualmente doutorando em Administração de Empresas
               pela FGV EAESP. Com mais de 15 anos de experiência, atuo em
@@ -82,7 +82,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Button 
-                className="px-8 group bg-white text-blue-500 hover:bg-white/80" 
+                className="px-8 group" 
                 variant="default"
                 asChild
               >
@@ -91,7 +91,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button 
-                className="px-8 group bg-blue-700 border-blue-700 text-white hover:bg-blue-800 hover:border-blue-800" 
+                className="px-8 group" 
                 variant="outline"
                 asChild
               >
@@ -101,7 +101,7 @@ const Hero = () => {
               </Button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-3 gap-6 pt-8">
               {[
                 {
                   icon: <GraduationCap className="w-8 h-8 mb-2" />,
@@ -121,12 +121,12 @@ const Hero = () => {
               ].map((stat, i) => (
                 <div
                   key={i}
-                  className="glass-card p-4 rounded-lg text-center flex-1 shadow-md bg-white/30 backdrop-blur-sm border border-white/20 animate-fade-in hover:shadow-lg transition-shadow"
+                  className="glass-card p-4 rounded-lg text-center flex-1 shadow-md bg-white/60 backdrop-blur-sm border border-blue-50 animate-fade-in hover:shadow-lg transition-shadow"
                   style={{ animationDelay: `${0.7 + i * 0.2}s` }}
                 >
-                  <div className="text-white flex justify-center">{stat.icon}</div>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-white/80">
+                  <div className="text-primary/80 flex justify-center">{stat.icon}</div>
+                  <div className="text-2xl font-bold">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">
                     {stat.label}
                   </div>
                 </div>
@@ -138,7 +138,7 @@ const Hero = () => {
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <a
             href="#about"
-            className="flex flex-col items-center text-sm text-white hover:text-white/80 transition-colors"
+            className="flex flex-col items-center text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <span className="mb-2">Role para baixo</span>
             <ArrowDown className="w-6 h-6" />

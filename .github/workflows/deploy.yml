@@ -1,10 +1,9 @@
-
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main # Certifique-se de que este é o nome do seu branch principal
+      - main # Substitua "main" pelo nome do seu branch principal
 
 jobs:
   build-and-deploy:
@@ -19,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18 # Certifique-se de usar a versão correta do Node.js
           cache: 'npm'
 
       # Instalar dependências
