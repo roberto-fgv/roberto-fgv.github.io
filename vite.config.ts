@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -13,12 +14,12 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    ghPages(), // Adiciona o plugin para deploy no GitHub Pages
+    ghPages(), // Plugin para deploy no GitHub Pages
   ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/", // Substitua pelo nome do repositório no GitHub
+  base: "/portfolio/", // Nome do repositório no GitHub
 }));
