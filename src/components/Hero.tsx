@@ -91,7 +91,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button 
-                className="px-8 group border-white text-white hover:bg-white/20" 
+                className="px-8 group bg-blue-700 border-blue-700 text-white hover:bg-blue-800 hover:border-blue-800" 
                 variant="outline"
                 asChild
               >
