@@ -54,7 +54,7 @@ const Hero = () => {
         style={{ animationDelay: "2s" }}
       ></div>
 
-      <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 transition-opacity duration-1000 opacity-75">
+      <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 opacity-100">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <div>
@@ -64,12 +64,15 @@ const Hero = () => {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight text-gray-900">
-              <span className="block">Roberto Rocha</span>
-              <span className="text-2xl md:text-3xl lg:text-4xl text-gray-700 mt-2 block">
+            {/* More harmonious name display */}
+            <div className="name-container">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-gray-900 mb-2">
+                Roberto Rocha
+              </h1>
+              <div className="text-xl md:text-2xl lg:text-3xl text-gray-700 font-light">
                 Ph.D. Candidate
-              </span>
-            </h1>
+              </div>
+            </div>
 
             <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
 
@@ -101,7 +104,7 @@ const Hero = () => {
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-8">
               {[
                 {
                   icon: <GraduationCap className="w-8 h-8 mb-2" />,

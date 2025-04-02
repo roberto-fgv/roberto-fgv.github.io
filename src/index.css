@@ -102,4 +102,14 @@
     @apply text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto opacity-0 animate-fade-up;
     animation-delay: 200ms;
   }
+  
+  .name-container {
+    @apply relative mb-4 transition-all;
+    animation: scale-in 0.5s ease-out forwards;
+  }
+  
+  .name-container::after {
+    content: '';
+    @apply block w-1/2 h-1 bg-primary/20 rounded-full mx-auto mt-2;
+  }
 }
