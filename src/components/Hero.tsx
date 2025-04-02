@@ -54,7 +54,7 @@ const Hero = () => {
         style={{ animationDelay: "2s" }}
       ></div>
 
-      <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 transition-opacity duration-1000 opacity-0">
+      <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 transition-opacity duration-1000 opacity-100">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <div>
