@@ -54,6 +54,12 @@ const Education = () => {
       description: "Trabalho de conclusão sobre [tema específico]. Orientador: Prof. Dr. André Luiz Zambalde."
     },
     {
+      degree: "Bacharelado em Administração de Empresas",
+      institution: "UniFTC",
+      location: "Vitória da Conquista, Brasil",
+      date: "2002 - 2006"
+    },
+    {
       degree: "Técnico em Informática",
       institution: "Instituto Federal de Educação, Ciência e Tecnologia da Bahia",
       location: "Vitória da Conquista, Brasil",
