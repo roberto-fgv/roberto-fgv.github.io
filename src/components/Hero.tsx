@@ -58,22 +58,22 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <div>
-              <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary/90 border border-primary/10 inline-flex items-center">
+              <span className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 inline-flex items-center">
                 <Award className="w-4 h-4 mr-1" />
                 <span>MSc. Information Systems</span>
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-tight text-gray-900">
               <span className="block">Roberto Rocha</span>
-              <span className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mt-2 block">
+              <span className="text-2xl md:text-3xl lg:text-4xl text-gray-700 mt-2 block">
                 Ph.D. Candidate
               </span>
             </h1>
 
             <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
               Sou pesquisador com formação em Administração e Sistemas de
               Informação, atualmente doutorando em Administração de Empresas
               pela FGV EAESP. Com mais de 15 anos de experiência, atuo em
@@ -82,7 +82,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Button 
-                className="px-8 group" 
+                className="px-8 group bg-primary text-white hover:bg-primary/90" 
                 variant="default"
                 asChild
               >
@@ -91,7 +91,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button 
-                className="px-8 group" 
+                className="px-8 group bg-white text-primary border-primary hover:bg-gray-100" 
                 variant="outline"
                 asChild
               >
@@ -121,12 +121,12 @@ const Hero = () => {
               ].map((stat, i) => (
                 <div
                   key={i}
-                  className="glass-card p-4 rounded-lg text-center flex-1 shadow-md bg-white/60 backdrop-blur-sm border border-blue-50 animate-fade-in hover:shadow-lg transition-shadow"
+                  className="glass-card p-4 rounded-lg text-center flex-1 shadow-md bg-white/90 backdrop-blur-sm border border-blue-50 animate-fade-in hover:shadow-lg transition-shadow"
                   style={{ animationDelay: `${0.7 + i * 0.2}s` }}
                 >
-                  <div className="text-primary/80 flex justify-center">{stat.icon}</div>
-                  <div className="text-2xl font-bold">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-primary flex justify-center">{stat.icon}</div>
+                  <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+                  <div className="text-sm text-gray-700">
                     {stat.label}
                   </div>
                 </div>
@@ -138,7 +138,7 @@ const Hero = () => {
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <a
             href="#about"
-            className="flex flex-col items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="flex flex-col items-center text-sm text-gray-700 hover:text-primary transition-colors"
           >
             <span className="mb-2">Role para baixo</span>
             <ArrowDown className="w-6 h-6" />
