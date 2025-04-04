@@ -30,7 +30,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled 
-          ? "py-3 bg-white/10 backdrop-blur-lg shadow-sm" 
+          ? "py-3 bg-[#1A1F38]/90 backdrop-blur-lg shadow-md" 
           : "py-5 bg-transparent"
       )}
     >
@@ -39,7 +39,7 @@ const Navbar = () => {
           <a href="#" className="transition-colors hover:text-primary flex items-center gap-2">
             <GraduationCap className="h-6 w-6 text-white" />
             <span className={cn(
-              "transition-all duration-300 text-white",
+              "transition-all duration-300",
               scrolled ? "text-white" : "bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
             )}>
                {/* Currículo Acadêmico */}
@@ -63,7 +63,7 @@ const Navbar = () => {
                 "text-sm font-medium transition-colors relative py-2 text-white",
                 "after:absolute after:w-full after:h-0.5 after:bg-primary after:bottom-0 after:left-0",
                 "after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300",
-                scrolled ? "hover:text-primary" : "hover:text-primary"
+                "hover:text-primary"
               )}
             >
               {item.name}
@@ -95,7 +95,7 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       <div className={cn(
-        "md:hidden absolute w-full bg-white/10 backdrop-blur-lg shadow-md transition-all duration-300 overflow-hidden",
+        "md:hidden absolute w-full bg-[#1A1F38]/90 backdrop-blur-lg shadow-md transition-all duration-300 overflow-hidden",
         mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
       )}>
         <div className="px-4 py-2">
