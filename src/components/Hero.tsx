@@ -37,20 +37,20 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center pt-16 relative overflow-hidden bg-[#1A1F38] text-white"
+      className="min-h-screen flex flex-col items-center justify-center pt-16 relative overflow-hidden bg-[#131A41] text-white"
       ref={heroRef}
     >
       {/* Background decorations - updated for dark theme */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMzM5NjAiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTQtMi4yMSAwLTQgMS43OS00IDRzMS43OSA0IDQgNGMyLjIxIDAgNC0xLjc5IDQtNHptLTQgMTBjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDQgNC0xLjc5IDQtNC0xLjc5LTQtNC00em0wLTIwYzIuMjEgMCA0LTEuNzktNC00cy0xLjc5LTQtNC00LTQgMS43OS00IDQgMS43OSA0IDQgNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMTM4NjAiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTQtMi4yMSAwLTQgMS43OS00IDRzMS43OSA0IDQgNGMyLjIxIDAgNC0xLjc5IDQtNHptLTQgMTBjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDQgNC0xLjc5IDQtNC0xLjc5LTQtNC00em0wLTIwYzIuMjEgMCA0LTEuNzktNC00cy0xLjc5LTQtNC00LTQgMS43OS00IDQgMS43OSA0IDQgNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20 pointer-events-none"></div>
 
       {/* Animated shapes - updated colors */}
-      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#2D3250]/40 rounded-full filter blur-3xl opacity-40 animate-pulse"></div>
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#252D65]/40 rounded-full filter blur-3xl opacity-40 animate-pulse"></div>
       <div
-        className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#2D3250]/40 rounded-full filter blur-3xl opacity-40 animate-pulse"
+        className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#252D65]/40 rounded-full filter blur-3xl opacity-40 animate-pulse"
         style={{ animationDelay: "1s" }}
       ></div>
       <div
-        className="absolute top-1/4 left-1/4 w-48 h-48 bg-[#424B82]/30 rounded-full filter blur-2xl opacity-30 animate-pulse"
+        className="absolute top-1/4 left-1/4 w-48 h-48 bg-[#3E478C]/30 rounded-full filter blur-2xl opacity-30 animate-pulse"
         style={{ animationDelay: "2s" }}
       ></div>
 
@@ -58,7 +58,7 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="space-y-8 animate-fade-in opacity-100" style={{ animationDelay: "0.5s" }}>
             <div>
-              <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#F5BC4C]/90 text-[#1A1F38] border border-[#F5BC4C]/20 inline-flex items-center">
+              <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#F3B43C]/90 text-[#131A41] border border-[#F3B43C]/20 inline-flex items-center">
                 <Award className="w-4 h-4 mr-1" />
                 <span>MSc. Information Systems</span>
               </span>
@@ -74,7 +74,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="w-20 h-1 bg-[#F5BC4C] mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-[#F3B43C] mx-auto rounded-full"></div>
 
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
               Sou pesquisador com formação em Administração e Sistemas de
@@ -85,7 +85,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Button 
-                className="px-8 group bg-[#F5BC4C] text-[#1A1F38] hover:bg-[#F5BC4C]/90 font-medium" 
+                className="px-8 group bg-[#F3B43C] text-[#131A41] hover:bg-[#F3B43C]/90 font-medium" 
                 variant="default"
                 asChild
               >
@@ -94,7 +94,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button 
-                className="px-8 group bg-[#2D3250] text-white border border-[#424B82] hover:bg-[#424B82]" 
+                className="px-8 group bg-[#252D65] text-white border border-[#3E478C] hover:bg-[#3E478C]" 
                 variant="outline"
                 asChild
               >
@@ -124,12 +124,28 @@ const Hero = () => {
               ].map((stat, i) => (
                 <div
                   key={i}
-                  className="glass-card p-4 rounded-lg text-center flex-1 shadow-md bg-[#2D3250]/90 backdrop-blur-sm border border-[#424B82]/30 animate-fade-in hover:shadow-lg transition-shadow"
+                  className={`glass-card p-4 rounded-lg text-center flex-1 shadow-md backdrop-blur-sm border transition-shadow animate-fade-in hover:shadow-lg ${
+                    i === 0 ? "bg-[#7986CB]/90 border-[#7986CB]/30" : 
+                    i === 1 ? "bg-[#FFCC80]/90 border-[#FFCC80]/30 text-[#5D4037]" : 
+                    "bg-[#CE93D8]/90 border-[#CE93D8]/30 text-[#4A148C]"
+                  }`}
                   style={{ animationDelay: `${0.7 + i * 0.2}s` }}
                 >
-                  <div className="text-[#F5BC4C] flex justify-center">{stat.icon}</div>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-gray-300">
+                  <div className={`flex justify-center ${
+                    i === 0 ? "text-[#E8EAF6]" : 
+                    i === 1 ? "text-[#5D4037]" :
+                    "text-[#4A148C]"
+                  }`}>{stat.icon}</div>
+                  <div className={`text-2xl font-bold ${
+                    i === 0 ? "text-white" : 
+                    i === 1 ? "text-[#5D4037]" :
+                    "text-[#4A148C]"
+                  }`}>{stat.value}</div>
+                  <div className={`text-sm ${
+                    i === 0 ? "text-[#E8EAF6]" : 
+                    i === 1 ? "text-[#5D4037]/80" : 
+                    "text-[#4A148C]/80"
+                  }`}>
                     {stat.label}
                   </div>
                 </div>
@@ -141,7 +157,7 @@ const Hero = () => {
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <a
             href="#about"
-            className="flex flex-col items-center text-sm text-gray-300 hover:text-[#F5BC4C] transition-colors"
+            className="flex flex-col items-center text-sm text-gray-300 hover:text-[#F3B43C] transition-colors"
           >
             <span className="mb-2">Role para baixo</span>
             <ArrowDown className="w-6 h-6" />
