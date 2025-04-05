@@ -57,13 +57,6 @@ const Hero = () => {
       <div className="container max-w-6xl mx-auto px-4 py-12 md:py-0 opacity-100">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <div className="space-y-8 animate-fade-in opacity-100" style={{ animationDelay: "0.5s" }}>
-            <div>
-              <span className="px-3 py-1 rounded-full text-sm font-medium bg-[#F3B43C]/90 text-[#131A41] border border-[#F3B43C]/20 inline-flex items-center">
-                <Award className="w-4 h-4 mr-1" />
-                <span>MSc. Information Systems</span>
-              </span>
-            </div>
-
             {/* More harmonious name display with new colors */}
             <div className="name-container">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white mb-2">
