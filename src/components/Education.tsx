@@ -77,7 +77,7 @@ const Education = () => {
         
         <div className="relative mt-16" ref={timelineRef}>
           {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-primary/10 -translate-x-1/2"></div>
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[#4E57CA]/10 -translate-x-1/2"></div>
           
           {/* Timeline items */}
           {educationData.map((item, index) => (
@@ -89,22 +89,24 @@ const Education = () => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Timeline dot */}
-              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-primary/20 z-10">
-                <div className="w-full h-full rounded-full bg-primary/10 animate-pulse"></div>
+              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#4E57CA]/20 z-10">
+                <div className="w-full h-full rounded-full bg-[#4E57CA]/10 animate-pulse"></div>
               </div>
               
               <div className="md:w-1/2 ml-12 md:ml-0 md:px-8">
                 <div className="glass-card rounded-xl p-6 transition-all hover:shadow-md">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary/90 mb-4">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[#4E57CA]/10 text-[#4E57CA] mb-4">
                     {item.date}
                   </span>
                   <h3 className="text-xl font-bold">{item.degree}</h3>
-                  <h4 className="text-base font-medium text-muted-foreground mb-2">
+                  <h4 className="text-base font-medium text-[#4A4B65] mb-2">
                     {item.institution}, {item.location}
                   </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {item.description}
-                  </p>
+                  {item.description && (
+                    <p className="text-sm text-[#4A4B65]">
+                      {item.description}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="md:w-1/2 hidden md:block"></div>
