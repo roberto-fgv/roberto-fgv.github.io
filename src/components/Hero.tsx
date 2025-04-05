@@ -85,7 +85,7 @@ const Hero = () => {
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Button 
-                className="px-8 group bg-[#F3B43C] text-[#131A41] hover:bg-[#F3B43C]/90 font-medium" 
+                className="w-36 group bg-[#F3B43C] text-[#131A41] hover:bg-[#F3B43C]/90 font-medium" 
                 variant="default"
                 asChild
               >
@@ -94,7 +94,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button 
-                className="px-8 group bg-[#252D65] text-white border border-[#3E478C] hover:bg-[#3E478C]" 
+                className="w-36 group bg-[#252D65] text-white border border-[#3E478C] hover:bg-[#3E478C]" 
                 variant="outline"
                 asChild
               >
