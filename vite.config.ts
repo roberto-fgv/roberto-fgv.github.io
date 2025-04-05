@@ -21,7 +21,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
   base: "/", // Substitua pelo nome do repositório no GitHub
-  build: {
-    outDir: 'dist' // Adiciona o diretório de saída para a build
-  }
 }));
