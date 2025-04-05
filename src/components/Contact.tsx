@@ -87,7 +87,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-[#4A4B65]">Localização</p>
-                    <p className="text-sm text-[#4A4B65]">FGV EAESP<br />Av. 9 de Julho, 2029, Bela Vista, São Paulo - SP | CEP 01313-902</p>
+                    <p className="text-sm text-[#4A4B65]">
+                      FGV EAESP<br />
+                      Av. 9 de Julho, 2029, Bela Vista<br /> 
+                      São Paulo - SP<br />
+                      CEP 01313-902
+                    </p>
                   </div>
                 </div>
 
