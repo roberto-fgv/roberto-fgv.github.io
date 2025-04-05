@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 type Publication = {
@@ -82,8 +83,9 @@ const Publications = () => {
           Artigos científicos, capítulos de livros e trabalhos apresentados em conferências.
         </p>
         
+        {/* Updated filter menu with colors from the image */}
         <div className="flex justify-center mt-8 mb-12">
-          <div className="inline-flex p-1 rounded-lg bg-secondary">
+          <div className="inline-flex p-1 rounded-lg bg-[#f0f0f8]">
             {[
               { value: 'all', label: 'Todos' },
               { value: 'article', label: 'Artigos' },
@@ -94,8 +96,8 @@ const Publications = () => {
                 key={filter.value}
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                   activeFilter === filter.value 
-                    ? 'bg-white shadow-sm text-primary' 
-                    : 'bg-transparent text-muted-foreground hover:text-primary/80'
+                    ? 'bg-[#4E57CA] text-white shadow-sm' 
+                    : 'bg-transparent text-[#4A4B65] hover:bg-[#4E57CA]/10 hover:text-[#4E57CA]'
                 }`}
                 onClick={() => setActiveFilter(filter.value)}
               >
@@ -117,28 +119,29 @@ const Publications = () => {
               >
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary/90 mb-3">
+                    {/* Updated badge styles to match color scheme */}
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[#4E57CA]/10 text-[#4E57CA] mb-3">
                       {publication.year} • {publication.category === 'article' ? 'Artigo' : publication.category === 'book' ? 'Livro' : 'Conferência'}
                     </span>
                     <h3 className="text-lg font-bold mb-2">{publication.title}</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-[#4A4B65]">
                       {publication.authors}
                     </p>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-sm text-[#4A4B65] mt-1">
                       {publication.journal}
                     </p>
                   </div>
-                  <div className="text-lg">
+                  <div className="text-lg text-[#4E57CA]">
                     {expandedPublication === publication.id ? '−' : '+'}
                   </div>
                 </div>
                 
                 {expandedPublication === publication.id && (
-                  <div className="mt-4 pt-4 border-t border-primary/10 animate-fade-in">
+                  <div className="mt-4 pt-4 border-t border-[#4E57CA]/10 animate-fade-in">
                     {publication.abstract && (
                       <>
                         <h4 className="text-sm font-semibold mb-2">Resumo</h4>
-                        <p className="text-sm text-muted-foreground mb-4">
+                        <p className="text-sm text-[#4A4B65] mb-4">
                           {publication.abstract}
                         </p>
                       </>
@@ -150,7 +153,7 @@ const Publications = () => {
                           href={`https://doi.org/${publication.doi}`} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-xs ml-2 text-blue-600 hover:underline"
+                          className="text-xs ml-2 text-[#4E57CA] hover:text-[#6E77EA] hover:underline"
                         >
                           {publication.doi}
                         </a>
