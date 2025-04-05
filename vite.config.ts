@@ -13,7 +13,9 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    ghPages(), // Adiciona o plugin para deploy no GitHub Pages
+    ghPages({
+      outDir: "dist", // Ensure this matches the build output directory
+    }), // Adiciona o plugin para deploy no GitHub Pages
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -21,4 +23,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
   base: "/", // Substitua pelo nome do repositório no GitHub
+  build: {
+    outDir: "dist", // Ensure the output directory is set to 'dist'
+    emptyOutDir: true, // Clean the output directory before building
+  },
 }));
