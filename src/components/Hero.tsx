@@ -112,7 +112,7 @@ const Hero = () => {
                 {
                   icon: <BookMarked className="w-8 h-8 mb-2" />,
                   label: "Projetos",
-                  value: "15+",
+                  value: "2+",
                 },
               ].map((stat, i) => (
                 <div
