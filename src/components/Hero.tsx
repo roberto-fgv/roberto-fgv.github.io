@@ -3,9 +3,11 @@ import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowDown, Award, BookOpen, GraduationCap, BookMarked } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Animação no carregamento da página
@@ -60,20 +62,17 @@ const Hero = () => {
             {/* More harmonious name display with new colors */}
             <div className="name-container">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white mb-2">
-                Roberto Rocha
+                {t('hero.name')}
               </h1>
               <div className="text-xl md:text-2xl lg:text-3xl text-gray-200/80 font-light">
-                Ph.D. Candidate
+                {t('hero.title')}
               </div>
             </div>
 
             <div className="w-20 h-1 bg-[#F3B43C] mx-auto rounded-full"></div>
 
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-              Sou pesquisador com formação em Administração e Sistemas de
-              Informação, atualmente doutorando em Administração de Empresas
-              pela FGV EAESP. Com mais de 15 anos de experiência, atuo em
-              pesquisa, gestão de projetos e ensino superior.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -83,7 +82,7 @@ const Hero = () => {
                 asChild
               >
                 <a href="#contact">
-                  Contato
+                  {t('hero.contact')}
                 </a>
               </Button>
               <Button 
@@ -92,7 +91,7 @@ const Hero = () => {
                 asChild
               >
                 <a href="#about">
-                  Saiba Mais
+                  {t('hero.learnMore')}
                 </a>
               </Button>
             </div>
@@ -101,17 +100,17 @@ const Hero = () => {
               {[
                 {
                   icon: <GraduationCap className="w-8 h-8 mb-2" />,
-                  label: "Educação",
+                  label: t('hero.education'),
                   value: "Ph.D.",
                 },
                 {
                   icon: <BookOpen className="w-8 h-8 mb-2" />,
-                  label: "Publicações",
+                  label: t('hero.publications'),
                   value: "21+",
                 },
                 {
                   icon: <BookMarked className="w-8 h-8 mb-2" />,
-                  label: "Projetos",
+                  label: t('hero.projects'),
                   value: "2+",
                 },
               ].map((stat, i) => (
@@ -152,7 +151,7 @@ const Hero = () => {
             href="#about"
             className="flex flex-col items-center text-sm text-gray-300 hover:text-[#F3B43C] transition-colors"
           >
-            <span className="mb-2">Role para baixo</span>
+            <span className="mb-2">{t('hero.scrollDown')}</span>
             <ArrowDown className="w-6 h-6" />
           </a>
         </div>

@@ -2,10 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { GraduationCap } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -49,12 +52,12 @@ const Navbar = () => {
         
         <nav className="hidden md:flex space-x-8">
           {[
-            { name: 'Início', href: '#hero' },
-            { name: 'Sobre', href: '#about' },
-            { name: 'Formação', href: '#education' },
-            { name: 'Publicações', href: '#publications' },
-            { name: 'Habilidades', href: '#skills' },
-            { name: 'Contato', href: '#contact' },
+            { name: t('nav.home'), href: '#hero' },
+            { name: t('nav.about'), href: '#about' },
+            { name: t('nav.education'), href: '#education' },
+            { name: t('nav.publications'), href: '#publications' },
+            { name: t('nav.skills'), href: '#skills' },
+            { name: t('nav.contact'), href: '#contact' },
           ].map((item) => (
             <a
               key={item.name}
@@ -69,9 +72,13 @@ const Navbar = () => {
               {item.name}
             </a>
           ))}
+          
+          <LanguageSwitcher />
         </nav>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
+          
           <button 
             className="p-2 focus:outline-none text-white" 
             onClick={toggleMobileMenu}
@@ -100,12 +107,12 @@ const Navbar = () => {
       )}>
         <div className="px-4 py-2">
           {[
-            { name: 'Início', href: '#hero' },
-            { name: 'Sobre', href: '#about' },
-            { name: 'Formação', href: '#education' },
-            { name: 'Publicações', href: '#publications' },
-            { name: 'Habilidades', href: '#skills' },
-            { name: 'Contato', href: '#contact' },
+            { name: t('nav.home'), href: '#hero' },
+            { name: t('nav.about'), href: '#about' },
+            { name: t('nav.education'), href: '#education' },
+            { name: t('nav.publications'), href: '#publications' },
+            { name: t('nav.skills'), href: '#skills' },
+            { name: t('nav.contact'), href: '#contact' },
           ].map((item) => (
             <a
               key={item.name}
