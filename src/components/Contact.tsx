@@ -10,6 +10,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailError, setEmailError] = useState<string | null>(null);
   const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -17,28 +18,51 @@ const Contact = () => {
     setFormState(prev => ({ ...prev, [name]: value }));
   };
 
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!isValidEmail(formState.email)) {
+      setEmailError("Por favor, insira um email válido.");
+      return;
+    } else {
+      setEmailError(null);
+    }
+
     setIsSubmitting(true);
+    setFormStatus('idle');
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormStatus('success');
-      console.log('Form submitted:', formState);
+    // Placeholder for backend API integration
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formState),
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json().catch(() => {
+        throw new Error('Invalid JSON response'); // Handle non-JSON responses
+      });
+    })
+      .then(data => {
+        console.log('Success:', data);
+        setFormStatus('success'); // Update form status on successful submission
+        setIsSubmitting(false);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        setFormStatus('error'); // Update form status on error
+        setIsSubmitting(false);
+      });
 
-      // Reset form after success
-      setTimeout(() => {
-        setFormState({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
-        setFormStatus('idle');
-      }, 3000);
-    }, 1500);
   };
 
   return (
@@ -128,7 +152,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 hidden">
             <form
               onSubmit={handleSubmit}
               className={cn(
@@ -146,6 +170,9 @@ const Contact = () => {
                     <p>Sua mensagem foi enviada com sucesso!</p>
                   </div>
                 </div>
+              )}
+              {formStatus === 'error' && (
+                <p className="text-red-500 mb-4">Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.</p>
               )}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -173,6 +200,7 @@ const Contact = () => {
                     className="w-full px-4 py-2 border border-border rounded-lg bg-white/50 focus:outline-none focus:ring-2 focus:ring-[#4E57CA]/30 focus:border-[#4E57CA]/30"
                     placeholder="Seu email"
                     required
+                    onChange={(e) => { handleChange(e); setEmailError(null); }}
                   />
                 </div>
                 <div className="md:col-span-2">
@@ -213,6 +241,9 @@ const Contact = () => {
                     {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
                   </button>
                 </div>
+                {emailError && (
+                  <p className="text-red-500 md:col-span-2">{emailError}</p>
+                )}
               </div>
             </form>
           </div>

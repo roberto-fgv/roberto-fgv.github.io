@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Quantum Computing and its Applications",
+    "authors": ["A. Smith", "B. Jones"],
+    "publication_date": "2023-01-15",
+    "doi": "10.1234/quantum.123",
+    "abstract": "This paper explores the fundamentals of quantum computing and its potential applications in various fields.",
+    "keywords": ["quantum computing", "applications", "algorithms"]
+  },
+  {
+    "title": "The Impact of Artificial Intelligence on Society",
+    "authors": ["C. Davis", "D. Wilson", "E. Brown"],
+    "publication_date": "2022-11-20",
+    "doi": "10.5678/ai.456",
+    "abstract": "This article examines the multifaceted impact of artificial intelligence on society, considering both its benefits and challenges.",
+    "keywords": ["artificial intelligence", "society", "ethics", "impact"]
+  },
+  {
+    "title": "Climate Change and Sustainable Development",
+    "authors": ["F. Green"],
+    "publication_date": "2023-05-03",
+    "doi": "10.9012/climate.789",
+    "abstract": "This report analyzes the latest scientific findings on climate change and proposes strategies for sustainable development.",
+    "keywords": ["climate change", "sustainability", "environment", "policy"]
+  }
+]

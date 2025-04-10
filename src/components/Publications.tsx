@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 type Publication = {
   id: number;
@@ -12,6 +13,7 @@ type Publication = {
 };
 
 const Publications = () => {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [expandedPublication, setExpandedPublication] = useState<number | null>(null);
 
@@ -89,19 +91,19 @@ const Publications = () => {
   return (
     <section id="publications" className="py-16 md:py-24 bg-white">
       <div className="section-container">
-        <h2 className="section-title">Publicações</h2>
+        <h2 className="section-title">{t('publications.title')}</h2>
         <p className="section-subtitle">
-          Artigos científicos, capítulos de livros e trabalhos apresentados em conferências.
+          {t('publications.subtitle')}
         </p>
         
         {/* Updated filter menu with colors from the image */}
         <div className="flex justify-center mt-8 mb-12">
           <div className="inline-flex p-1 rounded-lg bg-[#f0f0f8]">
             {[
-              { value: 'all', label: 'Todos' },
-              { value: 'article', label: 'Artigos' },
-              { value: 'book', label: 'Livros' },
-              { value: 'conference', label: 'Conferências' },
+              { value: 'all', label: t('publications.filter.all') },
+              { value: 'article', label: t('publications.filter.article') },
+              { value: 'book', label: t('publications.filter.book') },
+              { value: 'conference', label: t('publications.filter.conference') },
             ].map((filter) => (
               <button
                 key={filter.value}

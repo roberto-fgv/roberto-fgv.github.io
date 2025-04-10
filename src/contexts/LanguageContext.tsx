@@ -9,10 +9,11 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 // Translations object
 const translations = {
+
   'pt-BR': {
     // Hero section
     'hero.name': 'Roberto Rocha',
@@ -32,6 +33,33 @@ const translations = {
     'nav.publications': 'Publicações',
     'nav.skills': 'Habilidades',
     'nav.contact': 'Contato',
+
+        'publications.title':'Publicações',
+        // Footer
+        'footer.phdCandidate': "Candidato a PhD | Sistemas de Informação",
+        'footer.home': "Início",
+        'footer.about': "Sobre",
+        'footer.education': "Formação",
+        'footer.publications': "Publicações",
+        'footer.skills': "Habilidades",
+        'footer.contact': "Contato",
+        'footer.copyright': `© ${new Date().getFullYear()} Roberto Rocha. Todos os direitos reservados.`,
+        'footer.privacy': "Política de Privacidade",
+        'footer.terms': "Termos de Uso",
+         // About section
+         'about.title': 'Sobre',
+         'about.subtitle': 'Conheça um pouco mais sobre minha carreira e interesses.',
+         'about.academicPath': 'Tenho graduação em Administração de Empresas pela UniFTC em 2006. Tenho me dedicado à pesquisa em Sistemas de Informação e Administração de Empresas, com foco principal nos tópicos relacionados à agilidade organizacional e inovação. Durante o meu Mestrado na Universidade de São Paulo (USP), busquei contribuir significativamente para o avanço do conhecimento na área através da investigação de temas como Linha de Produto para Gestão de Processos de Negócio, aplicações de tecnologias para a gestão do risco de desastres. Atualmente curso o Doutorado em Administração de Empresas na Fundação Getulio Vargas (FGV EAESP).',
+         'about.researchInterests': 'Meus interesses de pesquisa incluem Agilidade Organizacional, Sistemas de Informação e Estudos Organizacionais. Tenho aplicado metodologias qualitativas e quantitativas para investigar questões relacionadas à gestão de processos de negócio e à gestão do risco de desastres, com foco em aprimorar a tomada de decisões, promover a agilidade organizacional, e utilizar abordagens colaborativas e tecnologias de informação para resolver problemas complexos.',
+         'about.achievements': 'Entre minhas principais conquistas acadêmicas, destaco a aprovação em primeiro lugar no processo seletivo do Edital 01/2020 para bolsas de pesquisa no Centro de Tecnologia da Informação Renato Archer e a aprovação em 1º lugar do Mestrado em Sistemas de Informação da Universidade de São Paulo (USP). Além disso, fui agraciado com a prestigiosa Marie Skłodowska-Curie Actions Research Fellowship da Comissão Europeia em 2016. Meus trabalhos também obtiveram reconhecimento, como a inclusão na ScienceDirect Top 25 List of Most Downloaded Articles e o Top 20 Most Downloaded Recent Papers da Transactions in GIS.',
+         'about.collaborations': 'Tenho colaborado com pesquisadores de diversas instituições e países, incluindo a Universidade de São Paulo (USP), o European Research Center for Information Systems (ERCIS) e com a University Alliance Ruhr.',
+
+        // Publications section
+        'publications.subtitle': 'Artigos científicos, capítulos de livros e trabalhos apresentados em conferências.',
+        'publications.filter.all': 'Todos',
+        'publications.filter.article': 'Artigos',
+        'publications.filter.book': 'Livros',
+        'publications.filter.conference': 'Conferências',
   },
   'en': {
     // Hero section
@@ -52,6 +80,34 @@ const translations = {
     'nav.publications': 'Publications',
     'nav.skills': 'Skills',
     'nav.contact': 'Contact',
+
+        // Footer
+        'footer.phdCandidate': "PhD. Candidate | Information Systems",
+        'footer.home': "Home",
+        'footer.about': "About",
+        'footer.education': "Education",
+        'footer.publications': "Publications",
+        'footer.skills': "Skills",
+        'footer.contact': "Contact",
+        'footer.copyright': `© ${new Date().getFullYear()} Roberto Rocha. All rights reserved.`,
+        'footer.privacy': "Privacy Policy",
+        'footer.terms': "Terms of Use",
+           // About section
+           'about.title': 'About',
+           'about.subtitle': 'Learn more about my career and interests.',
+           'about.academicPath': 'Academic path in English',
+           'about.researchInterests': 'Research interests in English',
+           'about.achievements': 'Achievements in English',
+           'about.collaborations': 'Collaborations in English',
+
+           'publications.title':'Publications',
+
+           // Publications section
+           'publications.subtitle': 'Scientific articles, book chapters, and papers presented at conferences.',
+           'publications.filter.all': 'All',
+           'publications.filter.article': 'Articles',
+           'publications.filter.book': 'Books',
+           'publications.filter.conference': 'Conferences',
   }
 };
 

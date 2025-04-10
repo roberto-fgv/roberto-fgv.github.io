@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Education from '@/components/Education';
 import Publications from '@/components/Publications';
-import Skills from '@/components/Skills';
+// import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
