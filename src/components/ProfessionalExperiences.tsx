@@ -41,7 +41,7 @@ const ProfessionalExperiences = () => {
     >
       <div className="section-container">
         <h2 className="section-title">
-          {t('about.professionalExperiencesTitle')}
+          {t('about.title')}
         </h2>
         <p className="section-subtitle">
         {t('about.subtitle')}
