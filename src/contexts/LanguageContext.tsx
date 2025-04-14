@@ -53,6 +53,10 @@ const translations = {
          'about.researchInterests': 'Meus interesses de pesquisa incluem Agilidade Organizacional, Sistemas de Informação e Estudos Organizacionais. Tenho aplicado metodologias qualitativas e quantitativas para investigar questões relacionadas à gestão de processos de negócio e à gestão do risco de desastres, com foco em aprimorar a tomada de decisões, promover a agilidade organizacional, e utilizar abordagens colaborativas e tecnologias de informação para resolver problemas complexos.',
          'about.achievements': 'Entre minhas principais conquistas acadêmicas, destaco a aprovação em primeiro lugar no processo seletivo do Edital 01/2020 para bolsas de pesquisa no Centro de Tecnologia da Informação Renato Archer e a aprovação em 1º lugar do Mestrado em Sistemas de Informação da Universidade de São Paulo (USP). Além disso, fui agraciado com a prestigiosa Marie Skłodowska-Curie Actions Research Fellowship da Comissão Europeia em 2016. Meus trabalhos também obtiveram reconhecimento, como a inclusão na ScienceDirect Top 25 List of Most Downloaded Articles e o Top 20 Most Downloaded Recent Papers da Transactions in GIS.',
          'about.collaborations': 'Tenho colaborado com pesquisadores de diversas instituições e países, incluindo a Universidade de São Paulo (USP), o European Research Center for Information Systems (ERCIS) e com a University Alliance Ruhr.',
+         'about.professionalExperiences': [
+          
+        ],
+
 
         // Publications section
         'publications.subtitle': 'Artigos científicos, capítulos de livros e trabalhos apresentados em conferências.',
@@ -100,6 +104,9 @@ const translations = {
            'about.achievements': 'Achievements in English',
            'about.collaborations': 'Collaborations in English',
 
+           'about.professionalExperiences': [],
+
+
            'publications.title':'Publications',
 
            // Publications section
@@ -117,6 +124,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const translate = (key: string): string => {
     return translations[language][key as keyof typeof translations[typeof language]] || key;
   };
+
+  const getLanguageData = (key:string) => {
+    return translations[language][key]
+  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t: translate }}>

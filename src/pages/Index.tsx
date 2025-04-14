@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Education from '@/components/Education';
+import ProfessionalExperiences from '@/components/ProfessionalExperiences';
 import Publications from '@/components/Publications';
 // import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
@@ -64,6 +65,7 @@ const Index = () => {
       <Hero />
       <About />
       <Education />
+      <ProfessionalExperiences />
       <Publications />
       {/*<Skills />*/}
       <Contact />

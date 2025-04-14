@@ -55,7 +55,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="glass-card rounded-2xl p-8 opacity-0 animate-on-scroll" style={{ animationDelay: "200ms" }} >
+          <div className="glass-card rounded-2xl p-8 opacity-0 animate-on-scroll" style={{ animationDelay: "200ms" }}>
             <div className="mb-6">
               <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center mb-6">
                 <div className="w-8 h-8 bg-primary/10 text-primary/90 rounded-full flex items-center justify-center">
@@ -98,6 +98,7 @@ const About = () => {
       </div>
     </section>
   );
-};
+
+}
 
 export default About;
