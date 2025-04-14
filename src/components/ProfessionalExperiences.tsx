@@ -37,15 +37,15 @@ const ProfessionalExperiences = () => {
     <section
       id="professional-experiences"
       className="bg-white py-16 md:py-24"
-      ref={sectionRef}
+      ref={sectionRef} 
     >
       <div className="section-container">
         <h2 className="section-title">
-          {t('professionalExperiences.title')}
+          {t('about.title')}
         </h2>
         <p className="section-subtitle">
-          {t('professionalExperiences.subtitle')}
-        </p>
+        {t('about.subtitle')}
+      </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {t('professionalExperiences.professionalExperiences').map(
@@ -72,6 +72,6 @@ const ProfessionalExperiences = () => {
       </div>
     </section>
   );
-};
+}; 
 
 export default ProfessionalExperiences;
