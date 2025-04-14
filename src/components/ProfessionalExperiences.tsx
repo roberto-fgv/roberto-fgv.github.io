@@ -41,14 +41,14 @@ const ProfessionalExperiences = () => {
     >
       <div className="section-container">
         <h2 className="section-title">
-          {t('about.title')}
+          {t('about.professionalExperiencesTitle')}
         </h2>
         <p className="section-subtitle">
         {t('about.subtitle')}
       </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {t('professionalExperiences.professionalExperiences').map(
+          {t('about.professionalExperiences').map(
             (experience: any, index: number) => (
               <div
                 key={index}
