@@ -3,8 +3,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 import ParallaxBackground from './ParallaxBackground';
 
 const ProfessionalExperiences = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
+
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,16 +55,17 @@ const ProfessionalExperiences = () => {
           {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[#4E57CA]/10 -translate-x-1/2"></div>
           <div>
-            {(t('about.professionalExperiences') as Array<{
-              title: string;
-              company: string;
-              location: string;
-              duration: string;
-              description: string;
-            }>).map((experience, index) => (
+            {Array.isArray(t('about.professionalExperiences')) ? (
+              (t('about.professionalExperiences') as Array<{
+                title: string;
+                company: string;
+                location: string;
+                duration: string;
+                description: string;
+              }>).map((experience, index) => (
               <div
                 key={index}
-                className={`timeline-item relative flex flex-col md:flex-row gap-8 mb-12 opacity-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                className={`timeline-item animate-on-scroll opacity-0 relative flex flex-col md:flex-row gap-8 mb-12 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 {/* Timeline dot */}
@@ -83,7 +86,12 @@ const ProfessionalExperiences = () => {
                 </div>
                 <div className="md:w-1/2 hidden md:block"></div>
               </div>
-            ))}
+            ))
+            ) : (
+              <div className="text-center text-gray-400 py-8">
+                Nenhuma experiência profissional disponível no momento.
+              </div>
+            )}
           </div>
         </div>
       </div>
