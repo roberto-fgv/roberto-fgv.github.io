@@ -9,6 +9,11 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
 
+  const getNavText = (key: string): string => {
+    const value = t(key);
+    return typeof value === 'string' ? value : '';
+  };
+
   useEffect(() => {
     // Animação no carregamento da página
     if (heroRef.current) {
@@ -39,7 +44,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center pt-16 relative overflow-hidden bg-[#131A41] text-white"
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#131A41] text-white"
       ref={heroRef}
     >
       {/* Background decorations - updated for dark theme */}
@@ -62,17 +67,17 @@ const Hero = () => {
             {/* More harmonious name display with new colors */}
             <div className="name-container">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white mb-2">
-                {t('hero.name')}
+                {getNavText('hero.name')}
               </h1>
               <div className="text-xl md:text-2xl lg:text-3xl text-gray-200/80 font-light">
-                {t('hero.title')}
+                {getNavText('hero.title')}
               </div>
             </div>
 
             <div className="w-20 h-1 bg-[#F3B43C] mx-auto rounded-full"></div>
 
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-              {t('hero.description')}
+              {getNavText('hero.description')}
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -82,7 +87,7 @@ const Hero = () => {
                 asChild
               >
                 <a href="#contact">
-                  {t('hero.contact')}
+                  {getNavText('hero.contact')}
                 </a>
               </Button>
               <Button 
@@ -91,7 +96,7 @@ const Hero = () => {
                 asChild
               >
                 <a href="#about">
-                  {t('hero.learnMore')}
+                  {getNavText('hero.learnMore')}
                 </a>
               </Button>
             </div>
@@ -100,17 +105,17 @@ const Hero = () => {
               {[
                 {
                   icon: <GraduationCap className="w-8 h-8 mb-2" />,
-                  label: t('hero.education'),
+                  label: getNavText('hero.education'),
                   value: "Ph.D.",
                 },
                 {
                   icon: <BookOpen className="w-8 h-8 mb-2" />,
-                  label: t('hero.publications'),
+                  label: getNavText('hero.publications'),
                   value: "21+",
                 },
                 {
                   icon: <BookMarked className="w-8 h-8 mb-2" />,
-                  label: t('hero.projects'),
+                  label: getNavText('hero.projects'),
                   value: "2+",
                 },
               ].map((stat, i) => (
@@ -151,7 +156,7 @@ const Hero = () => {
             href="#about"
             className="flex flex-col items-center text-sm text-gray-300 hover:text-[#F3B43C] transition-colors"
           >
-            <span className="mb-2">{t('hero.scrollDown')}</span>
+            <span className="mb-2">{getNavText('hero.scrollDown')}</span>
             <ArrowDown className="w-6 h-6" />
           </a>
         </div>

@@ -6,8 +6,7 @@ import About from '@/components/About';
 import Education from '@/components/Education';
 import ProfessionalExperiences from '@/components/ProfessionalExperiences';
 import Publications from '@/components/Publications';
-// import Skills from '@/components/Skills';
-import Contact from '@/components/Contact';
+import Skills from '@/components/Skills';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -60,15 +59,16 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <ProfessionalExperiences />
-      <Publications />
-      {/*<Skills />*/}
-      <Contact />
+      <main className="flex-1">
+        <Hero />
+        <About />
+        <Education />
+        <ProfessionalExperiences />
+        <Publications />
+        <Skills />
+      </main>
       <Footer />
     </div>
   );

@@ -1,12 +1,27 @@
-
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'pt-BR' | 'en';
 
+interface ProfessionalExperience {
+  title: string;
+  company: string;
+  location: string;
+  duration: string;
+  description: string;
+}
+
+interface TranslationObject {
+  [key: string]: string | ProfessionalExperience[];
+}
+
+type Translations = {
+  [key in Language]: TranslationObject;
+};
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => string | ProfessionalExperience[];
 }
 
 export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -27,6 +42,7 @@ const translations = {
     'hero.projects': 'Projetos',
     
     // Navbar
+    'nav.title': 'Currículo Acadêmico',
     'nav.home': 'Início',
     'nav.about': 'Sobre',
     'nav.education': 'Formação',
@@ -55,8 +71,45 @@ const translations = {
          'about.collaborations': 'Tenho colaborado com pesquisadores de diversas instituições e países, incluindo a Universidade de São Paulo (USP), o European Research Center for Information Systems (ERCIS) e com a University Alliance Ruhr.',
          'about.professionalExperiencesTitle': 'Experiências Profissionais',
          'about.professionalExperiences': [
-          
-        ],
+            {
+              title: 'Teaching Assistant',
+              company: 'FGV EAESP',
+              location: 'São Paulo, SP',
+              duration: '2022 - Presente',
+              description: 'Atuação no Executive MBA e MPGI. Disciplinas: Customer Success Management, CEMS Business Project, Metodologia de Pesquisa. Assistência em cursos de graduação em Administração de TI e Estatística II.'
+            },
+            {
+              title: 'Professor Tutor',
+              company: 'Universidade Federal da Bahia',
+              location: 'Salvador, BA',
+              duration: '2021 - 2022',
+              description: 'Suporte aos alunos, correção de avaliações e produção de conteúdo pedagógico para EAD.'
+            },
+            {
+              title: 'Técnico Administrativo',
+              company: 'UFBA',
+              location: 'Salvador, BA',
+              duration: '2006 - 2022',
+              description: 'Atendimento ao público, elaboração de relatórios para coordenações e suporte às atividades acadêmicas.'
+            },
+            {
+              title: 'First Stage Researcher',
+              company: 'European Research Center',
+              location: 'Europa',
+              duration: '2016',
+              description: 'Bolsista Marie Curie no Projeto NITIMesr.'
+            }
+          ],
+          'about.skills': [
+            'Pesquisa quantitativa e qualitativa',
+            'Metodologias Ágeis',
+            'R',
+            'Python',
+            'HTML',
+            'JavaScript',
+            'Git e controle de versão',
+            'Elaboração de relatórios para acreditações (AMBA, CEMS, CAPES)'
+          ],
 
 
         // Publications section
@@ -79,6 +132,7 @@ const translations = {
     'hero.projects': 'Projects',
     
     // Navbar
+    'nav.title': 'Academic CV',
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.education': 'Education',
@@ -106,7 +160,46 @@ const translations = {
            'about.collaborations': 'Collaborations in English',
 
            'about.professionalExperiencesTitle': 'Professional Experiences',
-           'about.professionalExperiences': [],
+           'about.professionalExperiences': [
+            {
+              title: 'Teaching Assistant',
+              company: 'FGV EAESP',
+              location: 'São Paulo, SP',
+              duration: '2022 - Present',
+              description: 'Teaching in Executive MBA and MPGI programs. Courses: Customer Success Management, CEMS Business Project, Research Methodology. Assistance in undergraduate courses in IT Management and Statistics II.'
+            },
+            {
+              title: 'Tutor Professor',
+              company: 'Federal University of Bahia',
+              location: 'Salvador, BA',
+              duration: '2021 - 2022',
+              description: 'Student support, assessment grading, and development of pedagogical content for distance learning.'
+            },
+            {
+              title: 'Administrative Technician',
+              company: 'UFBA',
+              location: 'Salvador, BA',
+              duration: '2006 - 2022',
+              description: 'Public service, report preparation for coordinators, and support for academic activities.'
+            },
+            {
+              title: 'First Stage Researcher',
+              company: 'European Research Center',
+              location: 'Europe',
+              duration: '2016',
+              description: 'Marie Curie Fellow in the NITIMesr Project.'
+            }
+          ],
+          'about.skills': [
+            'Quantitative and qualitative research',
+            'Agile Methodologies',
+            'R',
+            'Python',
+            'HTML',
+            'JavaScript',
+            'Git and version control',
+            'Accreditation report preparation (AMBA, CEMS, CAPES)'
+          ],
 
 
            'publications.title':'Publications',
@@ -123,16 +216,22 @@ const translations = {
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>('pt-BR');
 
-  const translate = (key: string): string => {
-    return translations[language][key as keyof typeof translations[typeof language]] || key;
+  const t = (key: string): string | ProfessionalExperience[] => {
+    const value = translations[language][key];
+    if (Array.isArray(value) && value.length > 0) {
+      if (typeof value[0] === 'string') {
+        return value.join(', ');
+      }
+    }
+    return value;
   };
 
-  const getLanguageData = (key:string) => {
-    return translations[language][key]
+  const getLanguageData = (key: string): string | ProfessionalExperience[] => {
+    return translations[language][key];
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t: translate }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -5,10 +5,23 @@ import { GraduationCap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
+const navItems = [
+  { key: 'nav.home', href: '#hero' },
+  { key: 'nav.about', href: '#about' },
+  { key: 'nav.education', href: '#education' },
+  { key: 'nav.publications', href: '#publications' },
+  { key: 'nav.skills', href: '#skills' },
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useLanguage();
+  
+  const getNavText = (key: string): string => {
+    const value = t(key);
+    return typeof value === 'string' ? value : '';
+  };
   
   useEffect(() => {
     const handleScroll = () => {
@@ -31,36 +44,26 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
+        "sticky top-0 w-full z-50 transition-all duration-300 h-16 bg-[#131A41]",
         scrolled 
-          ? "py-3 bg-[#1A1F38]/90 backdrop-blur-lg shadow-md" 
-          : "py-5 bg-transparent"
+          ? "shadow-md border-b border-white/0" 
+          : "border-b border-white/10"
       )}
     >
-      <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
-        <div className="font-display font-bold text-xl flex items-center">
-          <a href="#" className="transition-colors hover:text-primary flex items-center gap-2">
+      <div className="max-w-6xl mx-auto h-full px-4 flex justify-between items-center">
+        <div className="font-display font-bold text-xl h-full flex items-center">
+          <a href="#" className="transition-colors hover:text-primary h-full flex items-center gap-2 pt-1">
             <GraduationCap className="h-6 w-6 text-white" />
-            <span className={cn(
-              "transition-all duration-300",
-              scrolled ? "text-white" : "bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-            )}>
-               {/* Currículo Acadêmico */}
+            <span className="text-white text-xl font-semibold">
+              {getNavText('nav.title')}
             </span>
           </a>
         </div>
         
-        <nav className="hidden md:flex space-x-8">
-          {[
-            { name: t('nav.home'), href: '#hero' },
-            { name: t('nav.about'), href: '#about' },
-            { name: t('nav.education'), href: '#education' },
-            { name: t('nav.publications'), href: '#publications' },
-            { name: t('nav.skills'), href: '#skills' },
-            { name: t('nav.contact'), href: '#contact' },
-          ].map((item) => (
+        <nav className="hidden h-full md:flex items-center space-x-8 pt-1">
+          {navItems.map((item) => (
             <a
-              key={item.name}
+              key={item.key}
               href={item.href}
               className={cn(
                 "text-sm font-medium transition-colors relative py-2 text-white",
@@ -69,7 +72,7 @@ const Navbar = () => {
                 "hover:text-primary"
               )}
             >
-              {item.name}
+              {getNavText(item.key)}
             </a>
           ))}
           
@@ -102,25 +105,18 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       <div className={cn(
-        "md:hidden absolute w-full bg-[#1A1F38]/90 backdrop-blur-lg shadow-md transition-all duration-300 overflow-hidden",
+        "md:hidden absolute w-full bg-[#131A41]/90 backdrop-blur-lg shadow-md transition-all duration-300 overflow-hidden",
         mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
       )}>
         <div className="px-4 py-2">
-          {[
-            { name: t('nav.home'), href: '#hero' },
-            { name: t('nav.about'), href: '#about' },
-            { name: t('nav.education'), href: '#education' },
-            { name: t('nav.publications'), href: '#publications' },
-            { name: t('nav.skills'), href: '#skills' },
-            { name: t('nav.contact'), href: '#contact' },
-          ].map((item) => (
+          {navItems.map((item) => (
             <a
-              key={item.name}
+              key={item.key}
               href={item.href}
               className="block py-3 text-center font-medium text-white hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              {item.name}
+              {getNavText(item.key)}
             </a>
           ))}
         </div>
