@@ -1,53 +1,151 @@
-# Getting Started with Create React App
+# Roberto dos Santos Rocha - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=flat&logo=react&logoColor=white)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0.14-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-## Available Scripts
+> Professional portfolio website showcasing my experience as a researcher, educator, and Information Systems specialist.
 
-In the project directory, you can run:
+## 🌐 Live Demo
 
-### `npm start`
+Visit the live site at: [https://roberto-fgv.github.io](https://roberto-fgv.github.io)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 📱 **Responsive Design** - Optimized for all devices and screen sizes
+- 🎨 **Modern UI** - Clean and professional interface built with Tailwind CSS
+- ⚡ **Fast Performance** - Built with React for optimal performance
+- 🔗 **Social Integration** - Direct links to LinkedIn and email
+- 📊 **Comprehensive Information** - Education, skills, experience, and publications
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Framework:** React 19.2.0
+- **Styling:** Tailwind CSS 4.0.14
+- **Icons:** Lucide React
+- **Build Tool:** React Scripts
+- **Package Manager:** npm
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (v14.0.0 or higher)
+- **npm** (v6.0.0 or higher)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/roberto-fgv/roberto-fgv.github.io.git
+   cd roberto-fgv.github.io
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   The application will open automatically at [http://localhost:3000](http://localhost:3000)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📜 Available Scripts
 
-## Learn More
+### Development
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
+Runs the app in development mode with hot-reload enabled.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Testing
 
-### Code Splitting
+```bash
+npm test
+```
+Launches the test runner in interactive watch mode.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Production Build
+
+```bash
+npm run build
+```
+Creates an optimized production build in the `build` folder.
+
+### Deployment
+
+```bash
+npm run deploy
+```
+Deploys the application to GitHub Pages (if configured).
+
+## 📁 Project Structure
+
+```
+roberto-fgv.github.io/
+├── public/              # Static files
+│   ├── index.html       # HTML template
+│   ├── favicon.ico      # Site favicon
+│   └── ...
+├── src/
+│   ├── components/      # Reusable UI components
+│   │   └── ui/          # UI component library
+│   │       ├── card.jsx
+│   │       └── button.jsx
+│   ├── App.js           # Main application component
+│   ├── HomePage.js      # Home page component
+│   ├── index.js         # Application entry point
+│   ├── index.css        # Global styles
+│   └── ...
+├── package.json         # Project dependencies
+├── tailwind.config.js   # Tailwind configuration
+└── README.md            # Project documentation
+```
+
+## 🎨 Customization
+
+### Updating Personal Information
+
+Edit `src/HomePage.js` to update:
+- Professional title and description
+- Education history
+- Skills and competencies
+- Professional experience
+- Publications and research
+- Contact information
+
+### Styling
+
+- **Global styles:** `src/index.css`
+- **Component styles:** Individual component files
+- **Tailwind config:** `src/tailwind.config.js`
+
+## 📞 Contact
+
+**Roberto dos Santos Rocha**
+- 📧 Email: [rsantos.rocha@gmail.com](mailto:rsantos.rocha@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/rsrocha](https://www.linkedin.com/in/rsrocha)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- Built with [Create React App](https://create-react-app.dev/)
+- Icons by [Lucide React](https://lucide.dev/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by Roberto dos Santos Rocha</p>
+  <p>© 2025 All rights reserved</p>
+</div>
 
 ### Analyzing the Bundle Size
 
