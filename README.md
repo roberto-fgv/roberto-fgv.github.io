@@ -8,7 +8,7 @@
 
 ## 🌐 Live Demo
 
-Visit the live site at: [https://roberto-fgv.github.io](https://roberto-fgv.github.io)
+Visit the live site at: [https://roberto-rocha.tech](https://roberto-rocha.tech)
 
 ## ✨ Features
 
@@ -23,7 +23,9 @@ Visit the live site at: [https://roberto-fgv.github.io](https://roberto-fgv.gith
 - **Framework:** React 19.2.0
 - **Styling:** Tailwind CSS 4.0.14
 - **Icons:** Lucide React
+- **Routing:** React Router DOM 7.9.4
 - **Build Tool:** React Scripts
+- **Hosting:** GitHub Pages with custom domain
 - **Package Manager:** npm
 
 ## 🚀 Getting Started
