@@ -160,9 +160,9 @@ export default function ExperienceAcceleratorNotebook() {
             <CardContent className="p-8">
               <h2 className="text-3xl font-semibold mb-4 text-indigo-900">Sobre Experience Accelerator</h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                A série de disciplinas Experience Accelerator (I, II e III) faz parte do programa 
-                da FGV EAESP e tem como objetivo desenvolver competências em design de experiência, 
-                inovação e transformação digital. As disciplinas abordam:
+                A série de disciplinas Experience Accelerator (EA) faz parte do programa Executive MBA da FGV EAESP, consistindo na análise e discussão de até 30 casos de negócios reais, exclusivos e atuais. O objetivo principal da disciplina é conectar a teoria à prática, permitindo que os alunos desenvolvam um plano tático para os desafios apresentados, aprimorando a capacidade de análise, tomada de decisão e comunicação.
+                A disciplina é estruturada como um laboratório que oferece uma visão abrangente do cenário empresarial brasileiro. Os estudos de caso e discussões abordam:
+
               </p>
               <ul className="list-disc list-inside text-gray-700 text-lg space-y-2 ml-4">
                 <li>Metodologias ágeis e design thinking</li>

@@ -58,7 +58,6 @@ export default function HomePage() {
             >
               Publications
             </a>
-            <a href="/experience-accelerator-notebook" className="text-sm text-gray-400 hover:text-white transition-colors">Notebook</a>
             <a href="mailto:rsantos.rocha@gmail.com" className="text-sm px-4 py-2 border border-white hover:bg-white hover:text-black transition-all">
               Contact
             </a>
@@ -152,7 +151,7 @@ export default function HomePage() {
       <section className="py-32 px-6 border-t border-gray-800 bg-gray-900/30">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-sm text-gray-500 mb-12 tracking-widest uppercase">Featured Project</h2>
-          <a href="/experience-accelerator-notebook" className="block group">
+          <a href="/" className="block group">
             <div className="border border-gray-800 p-12 hover:border-gray-600 transition-all">
               <div className="flex items-start justify-between mb-8">
                 <BookOpen size={48} className="text-gray-500" />
