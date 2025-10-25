@@ -1,5 +1,6 @@
 # Roberto dos Santos Rocha - Portfolio
 
+[![Deploy Status](https://github.com/roberto-fgv/roberto-fgv.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/roberto-fgv/roberto-fgv.github.io/actions/workflows/deploy.yml)
 [![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=flat&logo=react&logoColor=white)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0.14-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -80,10 +81,27 @@ Creates an optimized production build in the `build` folder.
 
 ### Deployment
 
+**Automatic Deployment (Recommended):**
+
+The site deploys automatically to GitHub Pages when you push to the `main` branch. Just commit and push your changes:
+
+```bash
+git add .
+git commit -m "Your changes"
+git push origin main
+```
+
+The GitHub Actions workflow will automatically:
+1. Build the application
+2. Deploy to GitHub Pages
+3. Update the live site at [roberto-rocha.tech](https://roberto-rocha.tech)
+
+**Manual Deployment (Alternative):**
+
 ```bash
 npm run deploy
 ```
-Deploys the application to GitHub Pages (if configured).
+Manually deploys the application to GitHub Pages (requires GitHub authentication).
 
 ## 📁 Project Structure
 
