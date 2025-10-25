@@ -15,9 +15,37 @@
 
 ## 🚀 Como Fazer Deploy
 
-### Método 1: Deploy Automático (Recomendado)
+### Método 1: Deploy Automático via GitHub Actions (Recomendado) ⭐
 
-Execute o comando:
+**O deploy agora é completamente automático!** Basta fazer commit e push das suas alterações:
+
+```bash
+# 1. Faça suas alterações nos arquivos
+# 2. Adicione os arquivos alterados
+git add .
+
+# 3. Faça o commit
+git commit -m "Descrição das suas mudanças"
+
+# 4. Envie para o GitHub
+git push origin main
+```
+
+**O que acontece automaticamente:**
+1. ✅ GitHub Actions detecta o push na branch `main`
+2. ✅ Instala as dependências do projeto
+3. ✅ Executa `npm run build` para criar os arquivos otimizados
+4. ✅ Faz deploy automático para a branch `gh-pages`
+5. ✅ Site atualizado em https://roberto-rocha.tech em ~2 minutos
+
+**Monitorando o Deploy:**
+- Acesse: https://github.com/roberto-fgv/roberto-fgv.github.io/actions
+- Visualize o progresso do workflow "Deploy to GitHub Pages"
+- Badge de status no README indica se o último deploy foi bem-sucedido
+
+### Método 2: Deploy Manual via npm
+
+Se preferir fazer deploy manualmente (requer autenticação GitHub):
 
 ```bash
 npm run deploy
@@ -29,9 +57,9 @@ Este comando irá:
 3. Fazer push da pasta `build` para a branch `gh-pages`
 4. O GitHub Pages irá servir o site automaticamente
 
-### Método 2: Deploy Manual
+### Método 3: Deploy Totalmente Manual
 
-Se preferir fazer manualmente:
+Se preferir fazer manualmente passo a passo:
 
 ```bash
 # 1. Build do projeto
@@ -90,6 +118,36 @@ Isso garante que URLs como `/experience-accelerator-notebook` funcionem quando a
 
 ## 📝 Workflow de Desenvolvimento
 
+### Novo Workflow Automático (Recomendado)
+
+1. **Desenvolvimento Local:**
+   ```bash
+   npm start
+   # Acesse: http://localhost:3000
+   ```
+
+2. **Teste o Build Localmente (Opcional):**
+   ```bash
+   npm run build
+   npx serve -s build
+   # Acesse: http://localhost:3000
+   ```
+
+3. **Commit e Push - Deploy Automático:**
+   ```bash
+   git add .
+   git commit -m "Descrição das mudanças"
+   git push origin main
+   # O GitHub Actions automaticamente faz build e deploy! 🚀
+   ```
+
+4. **Monitore o Deploy:**
+   - Acesse: https://github.com/roberto-fgv/roberto-fgv.github.io/actions
+   - Aguarde ~2 minutos
+   - Verifique: https://roberto-rocha.tech
+
+### Workflow Manual (Alternativo)
+
 1. **Desenvolvimento Local:**
    ```bash
    npm start
@@ -103,12 +161,12 @@ Isso garante que URLs como `/experience-accelerator-notebook` funcionem quando a
    # Acesse: http://localhost:3000
    ```
 
-3. **Deploy para Produção:**
+3. **Deploy Direto para GitHub Pages:**
    ```bash
    npm run deploy
    ```
 
-4. **Commit e Push do Código Fonte:**
+4. **Commit do Código Fonte:**
    ```bash
    git add .
    git commit -m "Descrição das mudanças"
@@ -117,11 +175,41 @@ Isso garante que URLs como `/experience-accelerator-notebook` funcionem quando a
 
 ## ⚠️ Troubleshooting
 
+### Problema: Mudanças não aparecem no site
+
+**Causa:** As mudanças foram commitadas mas não foram deployadas.
+
+**Solução com GitHub Actions (Automático):**
+1. Verifique se você fez push para a branch `main`:
+   ```bash
+   git push origin main
+   ```
+2. Acesse: https://github.com/roberto-fgv/roberto-fgv.github.io/actions
+3. Verifique se o workflow "Deploy to GitHub Pages" está rodando ou foi concluído
+4. Se houver erro, clique no workflow para ver os logs
+5. Aguarde 2-3 minutos após o workflow completar
+6. Limpe o cache do navegador (Ctrl+Shift+R ou Cmd+Shift+R)
+
+**Solução Manual (se GitHub Actions não estiver disponível):**
+```bash
+npm run deploy
+```
+
+### Problema: GitHub Actions workflow falhou
+
+**Solução:**
+1. Acesse: https://github.com/roberto-fgv/roberto-fgv.github.io/actions
+2. Clique no workflow que falhou
+3. Verifique os logs de erro
+4. Corrija o problema no código
+5. Faça commit e push novamente
+
 ### Problema: CSS não carrega
 
 **Solução:**
 - Verifique se `tailwind.config.js` existe na raiz
-- Execute `npm run deploy` novamente
+- Aguarde o GitHub Actions completar o deploy
+- Limpe o cache do navegador
 
 ### Problema: Rotas não funcionam
 
@@ -129,6 +217,7 @@ Isso garante que URLs como `/experience-accelerator-notebook` funcionem quando a
 - Verifique se `public/404.html` existe
 - Verifique se o script no `public/index.html` está presente
 - Aguarde alguns minutos após o deploy
+- Limpe o cache do navegador
 
 ### Problema: Domínio não funciona
 
@@ -136,8 +225,9 @@ Isso garante que URLs como `/experience-accelerator-notebook` funcionem quando a
 - Verifique se `public/CNAME` contém `roberto-rocha.tech`
 - Verifique as configurações DNS no provedor de domínio
 - No GitHub: Settings > Pages > verifique se o domínio está configurado
+- O arquivo CNAME é automaticamente incluído no deploy via GitHub Actions
 
-### Problema: Deploy falha
+### Problema: Deploy manual falha
 
 **Solução:**
 ```bash
@@ -167,14 +257,32 @@ No repositório GitHub:
 
 ## 📊 Checklist de Deploy
 
+### Deploy Automático (GitHub Actions)
+
+- [ ] Código testado localmente (`npm start`)
+- [ ] Build testado localmente (opcional: `npm run build`)
+- [ ] Sem erros no console
+- [ ] Tailwind CSS funcionando
+- [ ] Rotas funcionando corretamente
+- [ ] Links externos funcionando
+- [ ] Código commitado (`git add .` + `git commit -m "..."`)
+- [ ] Push para main (`git push origin main`)
+- [ ] GitHub Actions workflow executado com sucesso
+- [ ] Site verificado em produção (aguarde 2-3 minutos)
+- [ ] Cache do navegador limpo (Ctrl+Shift+R)
+- [ ] Testes em diferentes dispositivos/navegadores
+
+### Deploy Manual (Alternativo)
+
 - [ ] Código testado localmente (`npm start`)
 - [ ] Build testado localmente (`npm run build`)
 - [ ] Sem erros no console
 - [ ] Tailwind CSS funcionando
 - [ ] Rotas funcionando corretamente
 - [ ] Links externos funcionando
-- [ ] Commit do código fonte no Git
 - [ ] Deploy executado (`npm run deploy`)
+- [ ] Commit do código fonte (`git add .` + `git commit`)
+- [ ] Push para main (`git push origin main`)
 - [ ] Site verificado em produção
 - [ ] Testes em diferentes dispositivos/navegadores
 
@@ -182,6 +290,7 @@ No repositório GitHub:
 
 - **Site Produção:** https://roberto-rocha.tech
 - **Repositório:** https://github.com/roberto-fgv/roberto-fgv.github.io
+- **GitHub Actions:** https://github.com/roberto-fgv/roberto-fgv.github.io/actions
 - **GitHub Pages Settings:** https://github.com/roberto-fgv/roberto-fgv.github.io/settings/pages
 - **NotebookLM:** https://notebooklm.google.com/notebook/8f136821-fcc0-4149-a46f-8d5b50bca00b
 
