@@ -201,7 +201,7 @@ export default function HomePage() {
             
             <div className="border-l-2 border-gray-700 pl-8 hover:border-white transition-colors">
               <p className="text-sm text-gray-500 mb-2">2006 — 2022</p>
-              <h3 className="text-2xl font-light mb-2">Administrative Technician</h3>
+              <h3 className="text-2xl font-light mb-2">Administrative Assistant</h3>
               <p className="text-gray-500 mb-4">UFBA</p>
               <p className="text-gray-400">Administrative and academic support, report preparation, public service.</p>
             </div>
