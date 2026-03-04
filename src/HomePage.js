@@ -179,6 +179,13 @@ export default function HomePage() {
           <h2 className="text-sm text-gray-500 mb-12 tracking-widest uppercase">Experience</h2>
           <div className="space-y-12">
             <div className="border-l-2 border-gray-700 pl-8 hover:border-white transition-colors">
+              <p className="text-sm text-gray-500 mb-2">2026 — Present</p>
+              <h3 className="text-2xl font-light mb-2">Supervisor</h3>
+              <p className="text-gray-500 mb-4">UNIVESP</p>
+              <p className="text-gray-400">Academic supervision and coordination in distance learning at UNIVESP (Universidade Virtual do Estado de São Paulo).</p>
+            </div>
+
+            <div className="border-l-2 border-gray-700 pl-8 hover:border-white transition-colors">
               <p className="text-sm text-gray-500 mb-2">2022 — Present</p>
               <h3 className="text-2xl font-light mb-2">Teaching Assistant</h3>
               <p className="text-gray-500 mb-4">FGV EAESP</p>
